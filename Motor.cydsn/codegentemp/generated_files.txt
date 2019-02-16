@@ -44,6 +44,19 @@
   <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\PIN_OUT_aliases.h" value="HEADER;;;;;PIN_OUT" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\PIN_OUT.c" value="SOURCE_C;CortexM3;;;;PIN_OUT" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\PIN_OUT.h" value="HEADER;;;;;PIN_OUT" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Key_aliases.h" value="HEADER;;;;;Key" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Key.c" value="SOURCE_C;CortexM3;;;;Key" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Key.h" value="HEADER;;;;;Key" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\IRS_key.c" value="SOURCE_C;CortexM3;;;;IRS_key" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\IRS_key.h" value="HEADER;;;;;IRS_key" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\P0_aliases.h" value="HEADER;;;;;P0" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\P0.c" value="SOURCE_C;CortexM3;;;;P0" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\P0.h" value="HEADER;;;;;P0" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Control.h" value="HEADER;;;;;Control" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Control.c" value="SOURCE_C;CortexM3;;;;Control" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Control_PM.c" value="SOURCE_C;CortexM3;;;;Control" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="HEADER;;;;;LCD_LCDPort" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\LCD_LCDPort.c" value="SOURCE_C;CortexM3;;;;LCD_LCDPort" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\codegentemp\LCD_LCDPort.h" value="HEADER;;;;;LCD_LCDPort" />

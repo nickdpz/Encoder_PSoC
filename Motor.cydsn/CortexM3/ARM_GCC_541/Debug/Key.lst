@@ -1,0 +1,1094 @@
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Key.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Key_Write,"ax",%progbits
+  20              		.align	2
+  21              		.global	Key_Write
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Key_Write, %function
+  25              	Key_Write:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\Key.c"
+   1:Generated_Source\PSoC5/Key.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Key.c **** * File Name: Key.c  
+   3:Generated_Source\PSoC5/Key.c **** * Version 2.20
+   4:Generated_Source\PSoC5/Key.c **** *
+   5:Generated_Source\PSoC5/Key.c **** * Description:
+   6:Generated_Source\PSoC5/Key.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:Generated_Source\PSoC5/Key.c **** *
+   8:Generated_Source\PSoC5/Key.c **** * Note:
+   9:Generated_Source\PSoC5/Key.c **** *
+  10:Generated_Source\PSoC5/Key.c **** ********************************************************************************
+  11:Generated_Source\PSoC5/Key.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC5/Key.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:Generated_Source\PSoC5/Key.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:Generated_Source\PSoC5/Key.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC5/Key.c **** *******************************************************************************/
+  16:Generated_Source\PSoC5/Key.c **** 
+  17:Generated_Source\PSoC5/Key.c **** #include "cytypes.h"
+  18:Generated_Source\PSoC5/Key.c **** #include "Key.h"
+  19:Generated_Source\PSoC5/Key.c **** 
+  20:Generated_Source\PSoC5/Key.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
+  21:Generated_Source\PSoC5/Key.c **** #if !(CY_PSOC5A &&\
+  22:Generated_Source\PSoC5/Key.c **** 	 Key__PORT == 15 && ((Key__MASK & 0xC0) != 0))
+  23:Generated_Source\PSoC5/Key.c **** 
+  24:Generated_Source\PSoC5/Key.c **** 
+  25:Generated_Source\PSoC5/Key.c **** /*******************************************************************************
+  26:Generated_Source\PSoC5/Key.c **** * Function Name: Key_Write
+  27:Generated_Source\PSoC5/Key.c **** ****************************************************************************//**
+  28:Generated_Source\PSoC5/Key.c **** *
+  29:Generated_Source\PSoC5/Key.c **** * \brief Writes the value to the physical port (data output register), masking
+  30:Generated_Source\PSoC5/Key.c **** *  and shifting the bits appropriately. 
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Key.c **** *
+  32:Generated_Source\PSoC5/Key.c **** * The data output register controls the signal applied to the physical pin in 
+  33:Generated_Source\PSoC5/Key.c **** * conjunction with the drive mode parameter. This function avoids changing 
+  34:Generated_Source\PSoC5/Key.c **** * other bits in the port by using the appropriate method (read-modify-write or
+  35:Generated_Source\PSoC5/Key.c **** * bit banding).
+  36:Generated_Source\PSoC5/Key.c **** *
+  37:Generated_Source\PSoC5/Key.c **** * <b>Note</b> This function should not be used on a hardware digital output pin 
+  38:Generated_Source\PSoC5/Key.c **** * as it is driven by the hardware signal attached to it.
+  39:Generated_Source\PSoC5/Key.c **** *
+  40:Generated_Source\PSoC5/Key.c **** * \param value
+  41:Generated_Source\PSoC5/Key.c **** *  Value to write to the component instance.
+  42:Generated_Source\PSoC5/Key.c **** *
+  43:Generated_Source\PSoC5/Key.c **** * \return 
+  44:Generated_Source\PSoC5/Key.c **** *  None 
+  45:Generated_Source\PSoC5/Key.c **** *
+  46:Generated_Source\PSoC5/Key.c **** * \sideeffect
+  47:Generated_Source\PSoC5/Key.c **** *  If you use read-modify-write operations that are not atomic; the Interrupt 
+  48:Generated_Source\PSoC5/Key.c **** *  Service Routines (ISR) can cause corruption of this function. An ISR that 
+  49:Generated_Source\PSoC5/Key.c **** *  interrupts this function and performs writes to the Pins component data 
+  50:Generated_Source\PSoC5/Key.c **** *  register can cause corrupted port data. To avoid this issue, you should 
+  51:Generated_Source\PSoC5/Key.c **** *  either use the Per-Pin APIs (primary method) or disable interrupts around 
+  52:Generated_Source\PSoC5/Key.c **** *  this function.
+  53:Generated_Source\PSoC5/Key.c **** *
+  54:Generated_Source\PSoC5/Key.c **** * \funcusage
+  55:Generated_Source\PSoC5/Key.c **** *  \snippet Key_SUT.c usage_Key_Write
+  56:Generated_Source\PSoC5/Key.c **** *******************************************************************************/
+  57:Generated_Source\PSoC5/Key.c **** void Key_Write(uint8 value)
+  58:Generated_Source\PSoC5/Key.c **** {
+  28              		.loc 1 58 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  59:Generated_Source\PSoC5/Key.c ****     uint8 staticBits = (Key_DR & (uint8)(~Key_MASK));
+  34              		.loc 1 59 0
+  35 0000 044A     		ldr	r2, .L2
+  36 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  37 0004 03F0F003 		and	r3, r3, #240
+  38              	.LVL1:
+  60:Generated_Source\PSoC5/Key.c ****     Key_DR = staticBits | ((uint8)(value << Key_SHIFT) & Key_MASK);
+  39              		.loc 1 60 0
+  40 0008 00F00F00 		and	r0, r0, #15
+  41              	.LVL2:
+  42 000c 1843     		orrs	r0, r0, r3
+  43 000e 1070     		strb	r0, [r2]
+  44 0010 7047     		bx	lr
+  45              	.L3:
+  46 0012 00BF     		.align	2
+  47              	.L2:
+  48 0014 00510040 		.word	1073762560
+  49              		.cfi_endproc
+  50              	.LFE0:
+  51              		.size	Key_Write, .-Key_Write
+  52              		.section	.text.Key_SetDriveMode,"ax",%progbits
+  53              		.align	2
+  54              		.global	Key_SetDriveMode
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 3
+
+
+  55              		.thumb
+  56              		.thumb_func
+  57              		.type	Key_SetDriveMode, %function
+  58              	Key_SetDriveMode:
+  59              	.LFB1:
+  61:Generated_Source\PSoC5/Key.c **** }
+  62:Generated_Source\PSoC5/Key.c **** 
+  63:Generated_Source\PSoC5/Key.c **** 
+  64:Generated_Source\PSoC5/Key.c **** /*******************************************************************************
+  65:Generated_Source\PSoC5/Key.c **** * Function Name: Key_SetDriveMode
+  66:Generated_Source\PSoC5/Key.c **** ****************************************************************************//**
+  67:Generated_Source\PSoC5/Key.c **** *
+  68:Generated_Source\PSoC5/Key.c **** * \brief Sets the drive mode for each of the Pins component's pins.
+  69:Generated_Source\PSoC5/Key.c **** * 
+  70:Generated_Source\PSoC5/Key.c **** * <b>Note</b> This affects all pins in the Pins component instance. Use the
+  71:Generated_Source\PSoC5/Key.c **** * Per-Pin APIs if you wish to control individual pin's drive modes.
+  72:Generated_Source\PSoC5/Key.c **** *
+  73:Generated_Source\PSoC5/Key.c **** * \param mode
+  74:Generated_Source\PSoC5/Key.c **** *  Mode for the selected signals. Valid options are documented in 
+  75:Generated_Source\PSoC5/Key.c **** *  \ref driveMode.
+  76:Generated_Source\PSoC5/Key.c **** *
+  77:Generated_Source\PSoC5/Key.c **** * \return
+  78:Generated_Source\PSoC5/Key.c **** *  None
+  79:Generated_Source\PSoC5/Key.c **** *
+  80:Generated_Source\PSoC5/Key.c **** * \sideeffect
+  81:Generated_Source\PSoC5/Key.c **** *  If you use read-modify-write operations that are not atomic, the ISR can
+  82:Generated_Source\PSoC5/Key.c **** *  cause corruption of this function. An ISR that interrupts this function 
+  83:Generated_Source\PSoC5/Key.c **** *  and performs writes to the Pins component Drive Mode registers can cause 
+  84:Generated_Source\PSoC5/Key.c **** *  corrupted port data. To avoid this issue, you should either use the Per-Pin
+  85:Generated_Source\PSoC5/Key.c **** *  APIs (primary method) or disable interrupts around this function.
+  86:Generated_Source\PSoC5/Key.c **** *
+  87:Generated_Source\PSoC5/Key.c **** * \funcusage
+  88:Generated_Source\PSoC5/Key.c **** *  \snippet Key_SUT.c usage_Key_SetDriveMode
+  89:Generated_Source\PSoC5/Key.c **** *******************************************************************************/
+  90:Generated_Source\PSoC5/Key.c **** void Key_SetDriveMode(uint8 mode)
+  91:Generated_Source\PSoC5/Key.c **** {
+  60              		.loc 1 91 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  65              	.LVL3:
+  92:Generated_Source\PSoC5/Key.c **** 	CyPins_SetPinDriveMode(Key_0, mode);
+  66              		.loc 1 92 0
+  67 0000 0D4A     		ldr	r2, .L5
+  68 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  69 0004 00F00E00 		and	r0, r0, #14
+  70              	.LVL4:
+  71 0008 03F0F103 		and	r3, r3, #241
+  72 000c 0343     		orrs	r3, r3, r0
+  73 000e 1370     		strb	r3, [r2]
+  93:Generated_Source\PSoC5/Key.c **** 	CyPins_SetPinDriveMode(Key_1, mode);
+  74              		.loc 1 93 0
+  75 0010 0132     		adds	r2, r2, #1
+  76 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  77 0014 03F0F103 		and	r3, r3, #241
+  78 0018 0343     		orrs	r3, r3, r0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 4
+
+
+  79 001a 1370     		strb	r3, [r2]
+  94:Generated_Source\PSoC5/Key.c **** 	CyPins_SetPinDriveMode(Key_2, mode);
+  80              		.loc 1 94 0
+  81 001c 0132     		adds	r2, r2, #1
+  82 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  83 0020 03F0F103 		and	r3, r3, #241
+  84 0024 0343     		orrs	r3, r3, r0
+  85 0026 1370     		strb	r3, [r2]
+  95:Generated_Source\PSoC5/Key.c **** 	CyPins_SetPinDriveMode(Key_3, mode);
+  86              		.loc 1 95 0
+  87 0028 0132     		adds	r2, r2, #1
+  88 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  89 002c 03F0F103 		and	r3, r3, #241
+  90 0030 1843     		orrs	r0, r0, r3
+  91 0032 1070     		strb	r0, [r2]
+  92 0034 7047     		bx	lr
+  93              	.L6:
+  94 0036 00BF     		.align	2
+  95              	.L5:
+  96 0038 00500040 		.word	1073762304
+  97              		.cfi_endproc
+  98              	.LFE1:
+  99              		.size	Key_SetDriveMode, .-Key_SetDriveMode
+ 100              		.section	.text.Key_Read,"ax",%progbits
+ 101              		.align	2
+ 102              		.global	Key_Read
+ 103              		.thumb
+ 104              		.thumb_func
+ 105              		.type	Key_Read, %function
+ 106              	Key_Read:
+ 107              	.LFB2:
+  96:Generated_Source\PSoC5/Key.c **** }
+  97:Generated_Source\PSoC5/Key.c **** 
+  98:Generated_Source\PSoC5/Key.c **** 
+  99:Generated_Source\PSoC5/Key.c **** /*******************************************************************************
+ 100:Generated_Source\PSoC5/Key.c **** * Function Name: Key_Read
+ 101:Generated_Source\PSoC5/Key.c **** ****************************************************************************//**
+ 102:Generated_Source\PSoC5/Key.c **** *
+ 103:Generated_Source\PSoC5/Key.c **** * \brief Reads the associated physical port (pin status register) and masks 
+ 104:Generated_Source\PSoC5/Key.c **** *  the required bits according to the width and bit position of the component
+ 105:Generated_Source\PSoC5/Key.c **** *  instance. 
+ 106:Generated_Source\PSoC5/Key.c **** *
+ 107:Generated_Source\PSoC5/Key.c **** * The pin's status register returns the current logic level present on the 
+ 108:Generated_Source\PSoC5/Key.c **** * physical pin.
+ 109:Generated_Source\PSoC5/Key.c **** *
+ 110:Generated_Source\PSoC5/Key.c **** * \return 
+ 111:Generated_Source\PSoC5/Key.c **** *  The current value for the pins in the component as a right justified number.
+ 112:Generated_Source\PSoC5/Key.c **** *
+ 113:Generated_Source\PSoC5/Key.c **** * \funcusage
+ 114:Generated_Source\PSoC5/Key.c **** *  \snippet Key_SUT.c usage_Key_Read  
+ 115:Generated_Source\PSoC5/Key.c **** *******************************************************************************/
+ 116:Generated_Source\PSoC5/Key.c **** uint8 Key_Read(void)
+ 117:Generated_Source\PSoC5/Key.c **** {
+ 108              		.loc 1 117 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 5
+
+
+ 112              		@ link register save eliminated.
+ 118:Generated_Source\PSoC5/Key.c ****     return (Key_PS & Key_MASK) >> Key_SHIFT;
+ 113              		.loc 1 118 0
+ 114 0000 024B     		ldr	r3, .L8
+ 115 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 119:Generated_Source\PSoC5/Key.c **** }
+ 116              		.loc 1 119 0
+ 117 0004 00F00F00 		and	r0, r0, #15
+ 118 0008 7047     		bx	lr
+ 119              	.L9:
+ 120 000a 00BF     		.align	2
+ 121              	.L8:
+ 122 000c 01510040 		.word	1073762561
+ 123              		.cfi_endproc
+ 124              	.LFE2:
+ 125              		.size	Key_Read, .-Key_Read
+ 126              		.section	.text.Key_ReadDataReg,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	Key_ReadDataReg
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	Key_ReadDataReg, %function
+ 132              	Key_ReadDataReg:
+ 133              	.LFB3:
+ 120:Generated_Source\PSoC5/Key.c **** 
+ 121:Generated_Source\PSoC5/Key.c **** 
+ 122:Generated_Source\PSoC5/Key.c **** /*******************************************************************************
+ 123:Generated_Source\PSoC5/Key.c **** * Function Name: Key_ReadDataReg
+ 124:Generated_Source\PSoC5/Key.c **** ****************************************************************************//**
+ 125:Generated_Source\PSoC5/Key.c **** *
+ 126:Generated_Source\PSoC5/Key.c **** * \brief Reads the associated physical port's data output register and masks 
+ 127:Generated_Source\PSoC5/Key.c **** *  the correct bits according to the width and bit position of the component 
+ 128:Generated_Source\PSoC5/Key.c **** *  instance. 
+ 129:Generated_Source\PSoC5/Key.c **** *
+ 130:Generated_Source\PSoC5/Key.c **** * The data output register controls the signal applied to the physical pin in 
+ 131:Generated_Source\PSoC5/Key.c **** * conjunction with the drive mode parameter. This is not the same as the 
+ 132:Generated_Source\PSoC5/Key.c **** * preferred Key_Read() API because the 
+ 133:Generated_Source\PSoC5/Key.c **** * Key_ReadDataReg() reads the data register instead of the status 
+ 134:Generated_Source\PSoC5/Key.c **** * register. For output pins this is a useful function to determine the value 
+ 135:Generated_Source\PSoC5/Key.c **** * just written to the pin.
+ 136:Generated_Source\PSoC5/Key.c **** *
+ 137:Generated_Source\PSoC5/Key.c **** * \return 
+ 138:Generated_Source\PSoC5/Key.c **** *  The current value of the data register masked and shifted into a right 
+ 139:Generated_Source\PSoC5/Key.c **** *  justified number for the component instance.
+ 140:Generated_Source\PSoC5/Key.c **** *
+ 141:Generated_Source\PSoC5/Key.c **** * \funcusage
+ 142:Generated_Source\PSoC5/Key.c **** *  \snippet Key_SUT.c usage_Key_ReadDataReg 
+ 143:Generated_Source\PSoC5/Key.c **** *******************************************************************************/
+ 144:Generated_Source\PSoC5/Key.c **** uint8 Key_ReadDataReg(void)
+ 145:Generated_Source\PSoC5/Key.c **** {
+ 134              		.loc 1 145 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		@ link register save eliminated.
+ 146:Generated_Source\PSoC5/Key.c ****     return (Key_DR & Key_MASK) >> Key_SHIFT;
+ 139              		.loc 1 146 0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 6
+
+
+ 140 0000 024B     		ldr	r3, .L11
+ 141 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 147:Generated_Source\PSoC5/Key.c **** }
+ 142              		.loc 1 147 0
+ 143 0004 00F00F00 		and	r0, r0, #15
+ 144 0008 7047     		bx	lr
+ 145              	.L12:
+ 146 000a 00BF     		.align	2
+ 147              	.L11:
+ 148 000c 00510040 		.word	1073762560
+ 149              		.cfi_endproc
+ 150              	.LFE3:
+ 151              		.size	Key_ReadDataReg, .-Key_ReadDataReg
+ 152              		.section	.text.Key_SetInterruptMode,"ax",%progbits
+ 153              		.align	2
+ 154              		.global	Key_SetInterruptMode
+ 155              		.thumb
+ 156              		.thumb_func
+ 157              		.type	Key_SetInterruptMode, %function
+ 158              	Key_SetInterruptMode:
+ 159              	.LFB4:
+ 148:Generated_Source\PSoC5/Key.c **** 
+ 149:Generated_Source\PSoC5/Key.c **** 
+ 150:Generated_Source\PSoC5/Key.c **** /* If interrupt is connected for this Pins component */ 
+ 151:Generated_Source\PSoC5/Key.c **** #if defined(Key_INTSTAT) 
+ 152:Generated_Source\PSoC5/Key.c **** 
+ 153:Generated_Source\PSoC5/Key.c ****     /*******************************************************************************
+ 154:Generated_Source\PSoC5/Key.c ****     * Function Name: Key_SetInterruptMode
+ 155:Generated_Source\PSoC5/Key.c ****     ****************************************************************************//**
+ 156:Generated_Source\PSoC5/Key.c ****     *
+ 157:Generated_Source\PSoC5/Key.c ****     * \brief Configures the interrupt mode for each of the Pins component's
+ 158:Generated_Source\PSoC5/Key.c ****     *  pins. Alternatively you may set the interrupt mode for all the pins
+ 159:Generated_Source\PSoC5/Key.c ****     *  specified in the Pins component.
+ 160:Generated_Source\PSoC5/Key.c ****     *
+ 161:Generated_Source\PSoC5/Key.c ****     *  <b>Note</b> The interrupt is port-wide and therefore any enabled pin
+ 162:Generated_Source\PSoC5/Key.c ****     *  interrupt may trigger it.
+ 163:Generated_Source\PSoC5/Key.c ****     *
+ 164:Generated_Source\PSoC5/Key.c ****     * \param position
+ 165:Generated_Source\PSoC5/Key.c ****     *  The pin position as listed in the Pins component. You may OR these to be 
+ 166:Generated_Source\PSoC5/Key.c ****     *  able to configure the interrupt mode of multiple pins within a Pins 
+ 167:Generated_Source\PSoC5/Key.c ****     *  component. Or you may use Key_INTR_ALL to configure the
+ 168:Generated_Source\PSoC5/Key.c ****     *  interrupt mode of all the pins in the Pins component.       
+ 169:Generated_Source\PSoC5/Key.c ****     *  - Key_0_INTR       (First pin in the list)
+ 170:Generated_Source\PSoC5/Key.c ****     *  - Key_1_INTR       (Second pin in the list)
+ 171:Generated_Source\PSoC5/Key.c ****     *  - ...
+ 172:Generated_Source\PSoC5/Key.c ****     *  - Key_INTR_ALL     (All pins in Pins component)
+ 173:Generated_Source\PSoC5/Key.c ****     *
+ 174:Generated_Source\PSoC5/Key.c ****     * \param mode
+ 175:Generated_Source\PSoC5/Key.c ****     *  Interrupt mode for the selected pins. Valid options are documented in
+ 176:Generated_Source\PSoC5/Key.c ****     *  \ref intrMode.
+ 177:Generated_Source\PSoC5/Key.c ****     *
+ 178:Generated_Source\PSoC5/Key.c ****     * \return 
+ 179:Generated_Source\PSoC5/Key.c ****     *  None
+ 180:Generated_Source\PSoC5/Key.c ****     *  
+ 181:Generated_Source\PSoC5/Key.c ****     * \sideeffect
+ 182:Generated_Source\PSoC5/Key.c ****     *  It is recommended that the interrupt be disabled before calling this 
+ 183:Generated_Source\PSoC5/Key.c ****     *  function to avoid unintended interrupt requests. Note that the interrupt
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 7
+
+
+ 184:Generated_Source\PSoC5/Key.c ****     *  type is port wide, and therefore will trigger for any enabled pin on the 
+ 185:Generated_Source\PSoC5/Key.c ****     *  port.
+ 186:Generated_Source\PSoC5/Key.c ****     *
+ 187:Generated_Source\PSoC5/Key.c ****     * \funcusage
+ 188:Generated_Source\PSoC5/Key.c ****     *  \snippet Key_SUT.c usage_Key_SetInterruptMode
+ 189:Generated_Source\PSoC5/Key.c ****     *******************************************************************************/
+ 190:Generated_Source\PSoC5/Key.c ****     void Key_SetInterruptMode(uint16 position, uint16 mode)
+ 191:Generated_Source\PSoC5/Key.c ****     {
+ 160              		.loc 1 191 0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+ 165              	.LVL5:
+ 192:Generated_Source\PSoC5/Key.c **** 		if((position & Key_0_INTR) != 0u) 
+ 166              		.loc 1 192 0
+ 167 0000 10F0010F 		tst	r0, #1
+ 168 0004 02D0     		beq	.L14
+ 193:Generated_Source\PSoC5/Key.c **** 		{ 
+ 194:Generated_Source\PSoC5/Key.c **** 			 Key_0_INTTYPE_REG = (uint8)mode; 
+ 169              		.loc 1 194 0
+ 170 0006 CBB2     		uxtb	r3, r1
+ 171 0008 0B4A     		ldr	r2, .L18
+ 172 000a 1370     		strb	r3, [r2]
+ 173              	.L14:
+ 195:Generated_Source\PSoC5/Key.c **** 		} 
+ 196:Generated_Source\PSoC5/Key.c **** 		if((position & Key_1_INTR) != 0u) 
+ 174              		.loc 1 196 0
+ 175 000c 00F00203 		and	r3, r0, #2
+ 176 0010 9BB2     		uxth	r3, r3
+ 177 0012 13B1     		cbz	r3, .L15
+ 197:Generated_Source\PSoC5/Key.c **** 		{ 
+ 198:Generated_Source\PSoC5/Key.c **** 			 Key_1_INTTYPE_REG = (uint8)mode; 
+ 178              		.loc 1 198 0
+ 179 0014 CBB2     		uxtb	r3, r1
+ 180 0016 094A     		ldr	r2, .L18+4
+ 181 0018 1370     		strb	r3, [r2]
+ 182              	.L15:
+ 199:Generated_Source\PSoC5/Key.c **** 		} 
+ 200:Generated_Source\PSoC5/Key.c **** 		if((position & Key_2_INTR) != 0u) 
+ 183              		.loc 1 200 0
+ 184 001a 00F00403 		and	r3, r0, #4
+ 185 001e 9BB2     		uxth	r3, r3
+ 186 0020 13B1     		cbz	r3, .L16
+ 201:Generated_Source\PSoC5/Key.c **** 		{ 
+ 202:Generated_Source\PSoC5/Key.c **** 			 Key_2_INTTYPE_REG = (uint8)mode; 
+ 187              		.loc 1 202 0
+ 188 0022 CBB2     		uxtb	r3, r1
+ 189 0024 064A     		ldr	r2, .L18+8
+ 190 0026 1370     		strb	r3, [r2]
+ 191              	.L16:
+ 203:Generated_Source\PSoC5/Key.c **** 		} 
+ 204:Generated_Source\PSoC5/Key.c **** 		if((position & Key_3_INTR) != 0u) 
+ 192              		.loc 1 204 0
+ 193 0028 00F00800 		and	r0, r0, #8
+ 194              	.LVL6:
+ 195 002c 80B2     		uxth	r0, r0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 8
+
+
+ 196 002e 10B1     		cbz	r0, .L13
+ 205:Generated_Source\PSoC5/Key.c **** 		{ 
+ 206:Generated_Source\PSoC5/Key.c **** 			 Key_3_INTTYPE_REG = (uint8)mode; 
+ 197              		.loc 1 206 0
+ 198 0030 C9B2     		uxtb	r1, r1
+ 199              	.LVL7:
+ 200 0032 044B     		ldr	r3, .L18+12
+ 201 0034 1970     		strb	r1, [r3]
+ 202              	.L13:
+ 203 0036 7047     		bx	lr
+ 204              	.L19:
+ 205              		.align	2
+ 206              	.L18:
+ 207 0038 00450040 		.word	1073759488
+ 208 003c 01450040 		.word	1073759489
+ 209 0040 02450040 		.word	1073759490
+ 210 0044 03450040 		.word	1073759491
+ 211              		.cfi_endproc
+ 212              	.LFE4:
+ 213              		.size	Key_SetInterruptMode, .-Key_SetInterruptMode
+ 214              		.section	.text.Key_ClearInterrupt,"ax",%progbits
+ 215              		.align	2
+ 216              		.global	Key_ClearInterrupt
+ 217              		.thumb
+ 218              		.thumb_func
+ 219              		.type	Key_ClearInterrupt, %function
+ 220              	Key_ClearInterrupt:
+ 221              	.LFB5:
+ 207:Generated_Source\PSoC5/Key.c **** 		}
+ 208:Generated_Source\PSoC5/Key.c ****     }
+ 209:Generated_Source\PSoC5/Key.c ****     
+ 210:Generated_Source\PSoC5/Key.c ****     
+ 211:Generated_Source\PSoC5/Key.c ****     /*******************************************************************************
+ 212:Generated_Source\PSoC5/Key.c ****     * Function Name: Key_ClearInterrupt
+ 213:Generated_Source\PSoC5/Key.c ****     ****************************************************************************//**
+ 214:Generated_Source\PSoC5/Key.c ****     *
+ 215:Generated_Source\PSoC5/Key.c ****     * \brief Clears any active interrupts attached with the component and returns 
+ 216:Generated_Source\PSoC5/Key.c ****     *  the value of the interrupt status register allowing determination of which
+ 217:Generated_Source\PSoC5/Key.c ****     *  pins generated an interrupt event.
+ 218:Generated_Source\PSoC5/Key.c ****     *
+ 219:Generated_Source\PSoC5/Key.c ****     * \return 
+ 220:Generated_Source\PSoC5/Key.c ****     *  The right-shifted current value of the interrupt status register. Each pin 
+ 221:Generated_Source\PSoC5/Key.c ****     *  has one bit set if it generated an interrupt event. For example, bit 0 is 
+ 222:Generated_Source\PSoC5/Key.c ****     *  for pin 0 and bit 1 is for pin 1 of the Pins component.
+ 223:Generated_Source\PSoC5/Key.c ****     *  
+ 224:Generated_Source\PSoC5/Key.c ****     * \sideeffect
+ 225:Generated_Source\PSoC5/Key.c ****     *  Clears all bits of the physical port's interrupt status register, not just
+ 226:Generated_Source\PSoC5/Key.c ****     *  those associated with the Pins component.
+ 227:Generated_Source\PSoC5/Key.c ****     *
+ 228:Generated_Source\PSoC5/Key.c ****     * \funcusage
+ 229:Generated_Source\PSoC5/Key.c ****     *  \snippet Key_SUT.c usage_Key_ClearInterrupt
+ 230:Generated_Source\PSoC5/Key.c ****     *******************************************************************************/
+ 231:Generated_Source\PSoC5/Key.c ****     uint8 Key_ClearInterrupt(void)
+ 232:Generated_Source\PSoC5/Key.c ****     {
+ 222              		.loc 1 232 0
+ 223              		.cfi_startproc
+ 224              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 9
+
+
+ 225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 226              		@ link register save eliminated.
+ 233:Generated_Source\PSoC5/Key.c ****         return (Key_INTSTAT & Key_MASK) >> Key_SHIFT;
+ 227              		.loc 1 233 0
+ 228 0000 024B     		ldr	r3, .L21
+ 229 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 234:Generated_Source\PSoC5/Key.c ****     }
+ 230              		.loc 1 234 0
+ 231 0004 00F00F00 		and	r0, r0, #15
+ 232 0008 7047     		bx	lr
+ 233              	.L22:
+ 234 000a 00BF     		.align	2
+ 235              	.L21:
+ 236 000c 80450040 		.word	1073759616
+ 237              		.cfi_endproc
+ 238              	.LFE5:
+ 239              		.size	Key_ClearInterrupt, .-Key_ClearInterrupt
+ 240              		.text
+ 241              	.Letext0:
+ 242              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 243              		.section	.debug_info,"",%progbits
+ 244              	.Ldebug_info0:
+ 245 0000 70010000 		.4byte	0x170
+ 246 0004 0400     		.2byte	0x4
+ 247 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 248 000a 04       		.byte	0x4
+ 249 000b 01       		.uleb128 0x1
+ 250 000c 65000000 		.4byte	.LASF24
+ 251 0010 0C       		.byte	0xc
+ 252 0011 F0010000 		.4byte	.LASF25
+ 253 0015 F3000000 		.4byte	.LASF26
+ 254 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 255 001d 00000000 		.4byte	0
+ 256 0021 00000000 		.4byte	.Ldebug_line0
+ 257 0025 02       		.uleb128 0x2
+ 258 0026 01       		.byte	0x1
+ 259 0027 06       		.byte	0x6
+ 260 0028 DB010000 		.4byte	.LASF0
+ 261 002c 02       		.uleb128 0x2
+ 262 002d 01       		.byte	0x1
+ 263 002e 08       		.byte	0x8
+ 264 002f 57000000 		.4byte	.LASF1
+ 265 0033 02       		.uleb128 0x2
+ 266 0034 02       		.byte	0x2
+ 267 0035 05       		.byte	0x5
+ 268 0036 C2010000 		.4byte	.LASF2
+ 269 003a 02       		.uleb128 0x2
+ 270 003b 02       		.byte	0x2
+ 271 003c 07       		.byte	0x7
+ 272 003d 49010000 		.4byte	.LASF3
+ 273 0041 02       		.uleb128 0x2
+ 274 0042 04       		.byte	0x4
+ 275 0043 05       		.byte	0x5
+ 276 0044 D2010000 		.4byte	.LASF4
+ 277 0048 02       		.uleb128 0x2
+ 278 0049 04       		.byte	0x4
+ 279 004a 07       		.byte	0x7
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 10
+
+
+ 280 004b 37010000 		.4byte	.LASF5
+ 281 004f 02       		.uleb128 0x2
+ 282 0050 08       		.byte	0x8
+ 283 0051 05       		.byte	0x5
+ 284 0052 AF010000 		.4byte	.LASF6
+ 285 0056 02       		.uleb128 0x2
+ 286 0057 08       		.byte	0x8
+ 287 0058 07       		.byte	0x7
+ 288 0059 93010000 		.4byte	.LASF7
+ 289 005d 03       		.uleb128 0x3
+ 290 005e 04       		.byte	0x4
+ 291 005f 05       		.byte	0x5
+ 292 0060 696E7400 		.ascii	"int\000"
+ 293 0064 02       		.uleb128 0x2
+ 294 0065 04       		.byte	0x4
+ 295 0066 07       		.byte	0x7
+ 296 0067 86010000 		.4byte	.LASF8
+ 297 006b 04       		.uleb128 0x4
+ 298 006c CC010000 		.4byte	.LASF9
+ 299 0070 02       		.byte	0x2
+ 300 0071 E401     		.2byte	0x1e4
+ 301 0073 2C000000 		.4byte	0x2c
+ 302 0077 04       		.uleb128 0x4
+ 303 0078 76010000 		.4byte	.LASF10
+ 304 007c 02       		.byte	0x2
+ 305 007d E501     		.2byte	0x1e5
+ 306 007f 3A000000 		.4byte	0x3a
+ 307 0083 02       		.uleb128 0x2
+ 308 0084 04       		.byte	0x4
+ 309 0085 04       		.byte	0x4
+ 310 0086 51000000 		.4byte	.LASF11
+ 311 008a 02       		.uleb128 0x2
+ 312 008b 08       		.byte	0x8
+ 313 008c 04       		.byte	0x4
+ 314 008d 5C010000 		.4byte	.LASF12
+ 315 0091 02       		.uleb128 0x2
+ 316 0092 01       		.byte	0x1
+ 317 0093 08       		.byte	0x8
+ 318 0094 BD010000 		.4byte	.LASF13
+ 319 0098 04       		.uleb128 0x4
+ 320 0099 32010000 		.4byte	.LASF14
+ 321 009d 02       		.byte	0x2
+ 322 009e 8E02     		.2byte	0x28e
+ 323 00a0 A4000000 		.4byte	0xa4
+ 324 00a4 05       		.uleb128 0x5
+ 325 00a5 6B000000 		.4byte	0x6b
+ 326 00a9 06       		.uleb128 0x6
+ 327 00aa 47000000 		.4byte	.LASF15
+ 328 00ae 01       		.byte	0x1
+ 329 00af 39       		.byte	0x39
+ 330 00b0 00000000 		.4byte	.LFB0
+ 331 00b4 18000000 		.4byte	.LFE0-.LFB0
+ 332 00b8 01       		.uleb128 0x1
+ 333 00b9 9C       		.byte	0x9c
+ 334 00ba DB000000 		.4byte	0xdb
+ 335 00be 07       		.uleb128 0x7
+ 336 00bf 10000000 		.4byte	.LASF17
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 11
+
+
+ 337 00c3 01       		.byte	0x1
+ 338 00c4 39       		.byte	0x39
+ 339 00c5 6B000000 		.4byte	0x6b
+ 340 00c9 00000000 		.4byte	.LLST0
+ 341 00cd 08       		.uleb128 0x8
+ 342 00ce 16000000 		.4byte	.LASF27
+ 343 00d2 01       		.byte	0x1
+ 344 00d3 3B       		.byte	0x3b
+ 345 00d4 6B000000 		.4byte	0x6b
+ 346 00d8 01       		.uleb128 0x1
+ 347 00d9 53       		.byte	0x53
+ 348 00da 00       		.byte	0
+ 349 00db 06       		.uleb128 0x6
+ 350 00dc 36000000 		.4byte	.LASF16
+ 351 00e0 01       		.byte	0x1
+ 352 00e1 5A       		.byte	0x5a
+ 353 00e2 00000000 		.4byte	.LFB1
+ 354 00e6 3C000000 		.4byte	.LFE1-.LFB1
+ 355 00ea 01       		.uleb128 0x1
+ 356 00eb 9C       		.byte	0x9c
+ 357 00ec 00010000 		.4byte	0x100
+ 358 00f0 07       		.uleb128 0x7
+ 359 00f1 AA010000 		.4byte	.LASF18
+ 360 00f5 01       		.byte	0x1
+ 361 00f6 5A       		.byte	0x5a
+ 362 00f7 6B000000 		.4byte	0x6b
+ 363 00fb 21000000 		.4byte	.LLST1
+ 364 00ff 00       		.byte	0
+ 365 0100 09       		.uleb128 0x9
+ 366 0101 E7010000 		.4byte	.LASF19
+ 367 0105 01       		.byte	0x1
+ 368 0106 74       		.byte	0x74
+ 369 0107 6B000000 		.4byte	0x6b
+ 370 010b 00000000 		.4byte	.LFB2
+ 371 010f 10000000 		.4byte	.LFE2-.LFB2
+ 372 0113 01       		.uleb128 0x1
+ 373 0114 9C       		.byte	0x9c
+ 374 0115 09       		.uleb128 0x9
+ 375 0116 00000000 		.4byte	.LASF20
+ 376 011a 01       		.byte	0x1
+ 377 011b 90       		.byte	0x90
+ 378 011c 6B000000 		.4byte	0x6b
+ 379 0120 00000000 		.4byte	.LFB3
+ 380 0124 10000000 		.4byte	.LFE3-.LFB3
+ 381 0128 01       		.uleb128 0x1
+ 382 0129 9C       		.byte	0x9c
+ 383 012a 06       		.uleb128 0x6
+ 384 012b 21000000 		.4byte	.LASF21
+ 385 012f 01       		.byte	0x1
+ 386 0130 BE       		.byte	0xbe
+ 387 0131 00000000 		.4byte	.LFB4
+ 388 0135 48000000 		.4byte	.LFE4-.LFB4
+ 389 0139 01       		.uleb128 0x1
+ 390 013a 9C       		.byte	0x9c
+ 391 013b 5E010000 		.4byte	0x15e
+ 392 013f 07       		.uleb128 0x7
+ 393 0140 7D010000 		.4byte	.LASF22
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 12
+
+
+ 394 0144 01       		.byte	0x1
+ 395 0145 BE       		.byte	0xbe
+ 396 0146 77000000 		.4byte	0x77
+ 397 014a 42000000 		.4byte	.LLST2
+ 398 014e 07       		.uleb128 0x7
+ 399 014f AA010000 		.4byte	.LASF18
+ 400 0153 01       		.byte	0x1
+ 401 0154 BE       		.byte	0xbe
+ 402 0155 77000000 		.4byte	0x77
+ 403 0159 63000000 		.4byte	.LLST3
+ 404 015d 00       		.byte	0
+ 405 015e 09       		.uleb128 0x9
+ 406 015f 63010000 		.4byte	.LASF23
+ 407 0163 01       		.byte	0x1
+ 408 0164 E7       		.byte	0xe7
+ 409 0165 6B000000 		.4byte	0x6b
+ 410 0169 00000000 		.4byte	.LFB5
+ 411 016d 10000000 		.4byte	.LFE5-.LFB5
+ 412 0171 01       		.uleb128 0x1
+ 413 0172 9C       		.byte	0x9c
+ 414 0173 00       		.byte	0
+ 415              		.section	.debug_abbrev,"",%progbits
+ 416              	.Ldebug_abbrev0:
+ 417 0000 01       		.uleb128 0x1
+ 418 0001 11       		.uleb128 0x11
+ 419 0002 01       		.byte	0x1
+ 420 0003 25       		.uleb128 0x25
+ 421 0004 0E       		.uleb128 0xe
+ 422 0005 13       		.uleb128 0x13
+ 423 0006 0B       		.uleb128 0xb
+ 424 0007 03       		.uleb128 0x3
+ 425 0008 0E       		.uleb128 0xe
+ 426 0009 1B       		.uleb128 0x1b
+ 427 000a 0E       		.uleb128 0xe
+ 428 000b 55       		.uleb128 0x55
+ 429 000c 17       		.uleb128 0x17
+ 430 000d 11       		.uleb128 0x11
+ 431 000e 01       		.uleb128 0x1
+ 432 000f 10       		.uleb128 0x10
+ 433 0010 17       		.uleb128 0x17
+ 434 0011 00       		.byte	0
+ 435 0012 00       		.byte	0
+ 436 0013 02       		.uleb128 0x2
+ 437 0014 24       		.uleb128 0x24
+ 438 0015 00       		.byte	0
+ 439 0016 0B       		.uleb128 0xb
+ 440 0017 0B       		.uleb128 0xb
+ 441 0018 3E       		.uleb128 0x3e
+ 442 0019 0B       		.uleb128 0xb
+ 443 001a 03       		.uleb128 0x3
+ 444 001b 0E       		.uleb128 0xe
+ 445 001c 00       		.byte	0
+ 446 001d 00       		.byte	0
+ 447 001e 03       		.uleb128 0x3
+ 448 001f 24       		.uleb128 0x24
+ 449 0020 00       		.byte	0
+ 450 0021 0B       		.uleb128 0xb
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 13
+
+
+ 451 0022 0B       		.uleb128 0xb
+ 452 0023 3E       		.uleb128 0x3e
+ 453 0024 0B       		.uleb128 0xb
+ 454 0025 03       		.uleb128 0x3
+ 455 0026 08       		.uleb128 0x8
+ 456 0027 00       		.byte	0
+ 457 0028 00       		.byte	0
+ 458 0029 04       		.uleb128 0x4
+ 459 002a 16       		.uleb128 0x16
+ 460 002b 00       		.byte	0
+ 461 002c 03       		.uleb128 0x3
+ 462 002d 0E       		.uleb128 0xe
+ 463 002e 3A       		.uleb128 0x3a
+ 464 002f 0B       		.uleb128 0xb
+ 465 0030 3B       		.uleb128 0x3b
+ 466 0031 05       		.uleb128 0x5
+ 467 0032 49       		.uleb128 0x49
+ 468 0033 13       		.uleb128 0x13
+ 469 0034 00       		.byte	0
+ 470 0035 00       		.byte	0
+ 471 0036 05       		.uleb128 0x5
+ 472 0037 35       		.uleb128 0x35
+ 473 0038 00       		.byte	0
+ 474 0039 49       		.uleb128 0x49
+ 475 003a 13       		.uleb128 0x13
+ 476 003b 00       		.byte	0
+ 477 003c 00       		.byte	0
+ 478 003d 06       		.uleb128 0x6
+ 479 003e 2E       		.uleb128 0x2e
+ 480 003f 01       		.byte	0x1
+ 481 0040 3F       		.uleb128 0x3f
+ 482 0041 19       		.uleb128 0x19
+ 483 0042 03       		.uleb128 0x3
+ 484 0043 0E       		.uleb128 0xe
+ 485 0044 3A       		.uleb128 0x3a
+ 486 0045 0B       		.uleb128 0xb
+ 487 0046 3B       		.uleb128 0x3b
+ 488 0047 0B       		.uleb128 0xb
+ 489 0048 27       		.uleb128 0x27
+ 490 0049 19       		.uleb128 0x19
+ 491 004a 11       		.uleb128 0x11
+ 492 004b 01       		.uleb128 0x1
+ 493 004c 12       		.uleb128 0x12
+ 494 004d 06       		.uleb128 0x6
+ 495 004e 40       		.uleb128 0x40
+ 496 004f 18       		.uleb128 0x18
+ 497 0050 9742     		.uleb128 0x2117
+ 498 0052 19       		.uleb128 0x19
+ 499 0053 01       		.uleb128 0x1
+ 500 0054 13       		.uleb128 0x13
+ 501 0055 00       		.byte	0
+ 502 0056 00       		.byte	0
+ 503 0057 07       		.uleb128 0x7
+ 504 0058 05       		.uleb128 0x5
+ 505 0059 00       		.byte	0
+ 506 005a 03       		.uleb128 0x3
+ 507 005b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 14
+
+
+ 508 005c 3A       		.uleb128 0x3a
+ 509 005d 0B       		.uleb128 0xb
+ 510 005e 3B       		.uleb128 0x3b
+ 511 005f 0B       		.uleb128 0xb
+ 512 0060 49       		.uleb128 0x49
+ 513 0061 13       		.uleb128 0x13
+ 514 0062 02       		.uleb128 0x2
+ 515 0063 17       		.uleb128 0x17
+ 516 0064 00       		.byte	0
+ 517 0065 00       		.byte	0
+ 518 0066 08       		.uleb128 0x8
+ 519 0067 34       		.uleb128 0x34
+ 520 0068 00       		.byte	0
+ 521 0069 03       		.uleb128 0x3
+ 522 006a 0E       		.uleb128 0xe
+ 523 006b 3A       		.uleb128 0x3a
+ 524 006c 0B       		.uleb128 0xb
+ 525 006d 3B       		.uleb128 0x3b
+ 526 006e 0B       		.uleb128 0xb
+ 527 006f 49       		.uleb128 0x49
+ 528 0070 13       		.uleb128 0x13
+ 529 0071 02       		.uleb128 0x2
+ 530 0072 18       		.uleb128 0x18
+ 531 0073 00       		.byte	0
+ 532 0074 00       		.byte	0
+ 533 0075 09       		.uleb128 0x9
+ 534 0076 2E       		.uleb128 0x2e
+ 535 0077 00       		.byte	0
+ 536 0078 3F       		.uleb128 0x3f
+ 537 0079 19       		.uleb128 0x19
+ 538 007a 03       		.uleb128 0x3
+ 539 007b 0E       		.uleb128 0xe
+ 540 007c 3A       		.uleb128 0x3a
+ 541 007d 0B       		.uleb128 0xb
+ 542 007e 3B       		.uleb128 0x3b
+ 543 007f 0B       		.uleb128 0xb
+ 544 0080 27       		.uleb128 0x27
+ 545 0081 19       		.uleb128 0x19
+ 546 0082 49       		.uleb128 0x49
+ 547 0083 13       		.uleb128 0x13
+ 548 0084 11       		.uleb128 0x11
+ 549 0085 01       		.uleb128 0x1
+ 550 0086 12       		.uleb128 0x12
+ 551 0087 06       		.uleb128 0x6
+ 552 0088 40       		.uleb128 0x40
+ 553 0089 18       		.uleb128 0x18
+ 554 008a 9742     		.uleb128 0x2117
+ 555 008c 19       		.uleb128 0x19
+ 556 008d 00       		.byte	0
+ 557 008e 00       		.byte	0
+ 558 008f 00       		.byte	0
+ 559              		.section	.debug_loc,"",%progbits
+ 560              	.Ldebug_loc0:
+ 561              	.LLST0:
+ 562 0000 00000000 		.4byte	.LVL0
+ 563 0004 0C000000 		.4byte	.LVL2
+ 564 0008 0100     		.2byte	0x1
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 15
+
+
+ 565 000a 50       		.byte	0x50
+ 566 000b 0C000000 		.4byte	.LVL2
+ 567 000f 18000000 		.4byte	.LFE0
+ 568 0013 0400     		.2byte	0x4
+ 569 0015 F3       		.byte	0xf3
+ 570 0016 01       		.uleb128 0x1
+ 571 0017 50       		.byte	0x50
+ 572 0018 9F       		.byte	0x9f
+ 573 0019 00000000 		.4byte	0
+ 574 001d 00000000 		.4byte	0
+ 575              	.LLST1:
+ 576 0021 00000000 		.4byte	.LVL3
+ 577 0025 08000000 		.4byte	.LVL4
+ 578 0029 0100     		.2byte	0x1
+ 579 002b 50       		.byte	0x50
+ 580 002c 08000000 		.4byte	.LVL4
+ 581 0030 3C000000 		.4byte	.LFE1
+ 582 0034 0400     		.2byte	0x4
+ 583 0036 F3       		.byte	0xf3
+ 584 0037 01       		.uleb128 0x1
+ 585 0038 50       		.byte	0x50
+ 586 0039 9F       		.byte	0x9f
+ 587 003a 00000000 		.4byte	0
+ 588 003e 00000000 		.4byte	0
+ 589              	.LLST2:
+ 590 0042 00000000 		.4byte	.LVL5
+ 591 0046 2C000000 		.4byte	.LVL6
+ 592 004a 0100     		.2byte	0x1
+ 593 004c 50       		.byte	0x50
+ 594 004d 2C000000 		.4byte	.LVL6
+ 595 0051 48000000 		.4byte	.LFE4
+ 596 0055 0400     		.2byte	0x4
+ 597 0057 F3       		.byte	0xf3
+ 598 0058 01       		.uleb128 0x1
+ 599 0059 50       		.byte	0x50
+ 600 005a 9F       		.byte	0x9f
+ 601 005b 00000000 		.4byte	0
+ 602 005f 00000000 		.4byte	0
+ 603              	.LLST3:
+ 604 0063 00000000 		.4byte	.LVL5
+ 605 0067 32000000 		.4byte	.LVL7
+ 606 006b 0100     		.2byte	0x1
+ 607 006d 51       		.byte	0x51
+ 608 006e 32000000 		.4byte	.LVL7
+ 609 0072 48000000 		.4byte	.LFE4
+ 610 0076 0400     		.2byte	0x4
+ 611 0078 F3       		.byte	0xf3
+ 612 0079 01       		.uleb128 0x1
+ 613 007a 51       		.byte	0x51
+ 614 007b 9F       		.byte	0x9f
+ 615 007c 00000000 		.4byte	0
+ 616 0080 00000000 		.4byte	0
+ 617              		.section	.debug_aranges,"",%progbits
+ 618 0000 44000000 		.4byte	0x44
+ 619 0004 0200     		.2byte	0x2
+ 620 0006 00000000 		.4byte	.Ldebug_info0
+ 621 000a 04       		.byte	0x4
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 16
+
+
+ 622 000b 00       		.byte	0
+ 623 000c 0000     		.2byte	0
+ 624 000e 0000     		.2byte	0
+ 625 0010 00000000 		.4byte	.LFB0
+ 626 0014 18000000 		.4byte	.LFE0-.LFB0
+ 627 0018 00000000 		.4byte	.LFB1
+ 628 001c 3C000000 		.4byte	.LFE1-.LFB1
+ 629 0020 00000000 		.4byte	.LFB2
+ 630 0024 10000000 		.4byte	.LFE2-.LFB2
+ 631 0028 00000000 		.4byte	.LFB3
+ 632 002c 10000000 		.4byte	.LFE3-.LFB3
+ 633 0030 00000000 		.4byte	.LFB4
+ 634 0034 48000000 		.4byte	.LFE4-.LFB4
+ 635 0038 00000000 		.4byte	.LFB5
+ 636 003c 10000000 		.4byte	.LFE5-.LFB5
+ 637 0040 00000000 		.4byte	0
+ 638 0044 00000000 		.4byte	0
+ 639              		.section	.debug_ranges,"",%progbits
+ 640              	.Ldebug_ranges0:
+ 641 0000 00000000 		.4byte	.LFB0
+ 642 0004 18000000 		.4byte	.LFE0
+ 643 0008 00000000 		.4byte	.LFB1
+ 644 000c 3C000000 		.4byte	.LFE1
+ 645 0010 00000000 		.4byte	.LFB2
+ 646 0014 10000000 		.4byte	.LFE2
+ 647 0018 00000000 		.4byte	.LFB3
+ 648 001c 10000000 		.4byte	.LFE3
+ 649 0020 00000000 		.4byte	.LFB4
+ 650 0024 48000000 		.4byte	.LFE4
+ 651 0028 00000000 		.4byte	.LFB5
+ 652 002c 10000000 		.4byte	.LFE5
+ 653 0030 00000000 		.4byte	0
+ 654 0034 00000000 		.4byte	0
+ 655              		.section	.debug_line,"",%progbits
+ 656              	.Ldebug_line0:
+ 657 0000 B9000000 		.section	.debug_str,"MS",%progbits,1
+ 657      02004000 
+ 657      00000201 
+ 657      FB0E0D00 
+ 657      01010101 
+ 658              	.LASF20:
+ 659 0000 4B65795F 		.ascii	"Key_ReadDataReg\000"
+ 659      52656164 
+ 659      44617461 
+ 659      52656700 
+ 660              	.LASF17:
+ 661 0010 76616C75 		.ascii	"value\000"
+ 661      6500
+ 662              	.LASF27:
+ 663 0016 73746174 		.ascii	"staticBits\000"
+ 663      69634269 
+ 663      747300
+ 664              	.LASF21:
+ 665 0021 4B65795F 		.ascii	"Key_SetInterruptMode\000"
+ 665      53657449 
+ 665      6E746572 
+ 665      72757074 
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 17
+
+
+ 665      4D6F6465 
+ 666              	.LASF16:
+ 667 0036 4B65795F 		.ascii	"Key_SetDriveMode\000"
+ 667      53657444 
+ 667      72697665 
+ 667      4D6F6465 
+ 667      00
+ 668              	.LASF15:
+ 669 0047 4B65795F 		.ascii	"Key_Write\000"
+ 669      57726974 
+ 669      6500
+ 670              	.LASF11:
+ 671 0051 666C6F61 		.ascii	"float\000"
+ 671      7400
+ 672              	.LASF1:
+ 673 0057 756E7369 		.ascii	"unsigned char\000"
+ 673      676E6564 
+ 673      20636861 
+ 673      7200
+ 674              	.LASF24:
+ 675 0065 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 675      43313120 
+ 675      352E342E 
+ 675      31203230 
+ 675      31363036 
+ 676 0098 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 676      20726576 
+ 676      6973696F 
+ 676      6E203233 
+ 676      37373135 
+ 677 00cb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 677      66756E63 
+ 677      74696F6E 
+ 677      2D736563 
+ 677      74696F6E 
+ 678              	.LASF26:
+ 679 00f3 433A5C55 		.ascii	"C:\\Users\\nikod\\Documents\\PSoC Creator\\ControlM"
+ 679      73657273 
+ 679      5C6E696B 
+ 679      6F645C44 
+ 679      6F63756D 
+ 680 0121 6F746F72 		.ascii	"otor\\Motor.cydsn\000"
+ 680      5C4D6F74 
+ 680      6F722E63 
+ 680      7964736E 
+ 680      00
+ 681              	.LASF14:
+ 682 0132 72656738 		.ascii	"reg8\000"
+ 682      00
+ 683              	.LASF5:
+ 684 0137 6C6F6E67 		.ascii	"long unsigned int\000"
+ 684      20756E73 
+ 684      69676E65 
+ 684      6420696E 
+ 684      7400
+ 685              	.LASF3:
+ 686 0149 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 18
+
+
+ 686      7420756E 
+ 686      7369676E 
+ 686      65642069 
+ 686      6E7400
+ 687              	.LASF12:
+ 688 015c 646F7562 		.ascii	"double\000"
+ 688      6C6500
+ 689              	.LASF23:
+ 690 0163 4B65795F 		.ascii	"Key_ClearInterrupt\000"
+ 690      436C6561 
+ 690      72496E74 
+ 690      65727275 
+ 690      707400
+ 691              	.LASF10:
+ 692 0176 75696E74 		.ascii	"uint16\000"
+ 692      313600
+ 693              	.LASF22:
+ 694 017d 706F7369 		.ascii	"position\000"
+ 694      74696F6E 
+ 694      00
+ 695              	.LASF8:
+ 696 0186 756E7369 		.ascii	"unsigned int\000"
+ 696      676E6564 
+ 696      20696E74 
+ 696      00
+ 697              	.LASF7:
+ 698 0193 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 698      206C6F6E 
+ 698      6720756E 
+ 698      7369676E 
+ 698      65642069 
+ 699              	.LASF18:
+ 700 01aa 6D6F6465 		.ascii	"mode\000"
+ 700      00
+ 701              	.LASF6:
+ 702 01af 6C6F6E67 		.ascii	"long long int\000"
+ 702      206C6F6E 
+ 702      6720696E 
+ 702      7400
+ 703              	.LASF13:
+ 704 01bd 63686172 		.ascii	"char\000"
+ 704      00
+ 705              	.LASF2:
+ 706 01c2 73686F72 		.ascii	"short int\000"
+ 706      7420696E 
+ 706      7400
+ 707              	.LASF9:
+ 708 01cc 75696E74 		.ascii	"uint8\000"
+ 708      3800
+ 709              	.LASF4:
+ 710 01d2 6C6F6E67 		.ascii	"long int\000"
+ 710      20696E74 
+ 710      00
+ 711              	.LASF0:
+ 712 01db 7369676E 		.ascii	"signed char\000"
+ 712      65642063 
+ 712      68617200 
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccpegt6i.s 			page 19
+
+
+ 713              	.LASF19:
+ 714 01e7 4B65795F 		.ascii	"Key_Read\000"
+ 714      52656164 
+ 714      00
+ 715              	.LASF25:
+ 716 01f0 47656E65 		.ascii	"Generated_Source\\PSoC5\\Key.c\000"
+ 716      72617465 
+ 716      645F536F 
+ 716      75726365 
+ 716      5C50536F 
+ 717              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
