@@ -12,20 +12,20 @@
 #include "project.h"
 
 volatile int16 cuenta=0;
-
+volatile int16 rpm=0;
 
 
 
 CY_ISR(ISR_SW){
     cuenta++;
-    LCD_Position(0,0);
-    LCD_PrintInt16(cuenta);
     SW_ClearInterrupt();
 }
 
 CY_ISR(ISR_Timer){
-    
-LED_Write(~LED_Read());
+    rpm=cuenta*60;
+    cuenta=0;
+    LCD_ClearDisplay();
+    LCD_PrintNumber(rpm);
 
 }
 
