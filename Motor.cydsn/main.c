@@ -13,6 +13,8 @@
 
 volatile int16 cuenta=0;
 volatile int16 rpm=0;
+int16 rpmingresado=500;
+
 
 
 
@@ -39,6 +41,7 @@ int main(void)
     ISR_T_StartEx(ISR_Timer);
     LCD_Start();
     Timer_Start();
+    PWM_Start();
     
     
 
@@ -46,6 +49,18 @@ int main(void)
 
     for(;;)
     {
+     
+        if(rpmingresado<rpm){
+        //Volverse mas lento
+        PWM_WriteCompare(800);    
+            
+        
+        }else{
+        
+        PWM_WriteCompare(80);  
+        //Volverse mas rapido
+        }
+        
         /* Place your application code here. */
     }
 }

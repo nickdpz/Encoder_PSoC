@@ -252,6 +252,7 @@
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="SW" />
+      <Data key="747471f1-1325-4f0f-8f7c-d71e7ad9877c" value="PIN_OUT" />
       <Data key="b661f150-e33a-445b-b629-176265437ed3/ed092b9b-d398-4703-be89-cebf998501f6" value="LCD_LCDPort" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="LED" />
     </Group>
@@ -3345,6 +3346,11 @@
         <Data key="Port Format" value="2,2" />
       </Group>
     </Group>
+    <Group key="747471f1-1325-4f0f-8f7c-d71e7ad9877c">
+      <Group key="0">
+        <Data key="Port Format" value="2,1" />
+      </Group>
+    </Group>
     <Group key="b661f150-e33a-445b-b629-176265437ed3/ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
         <Data key="Port Format" value="12,0" />
@@ -3370,9 +3376,10 @@
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="2,1" />
+        <Data key="Port Format" value="2,3" />
       </Group>
     </Group>
+    <Group key="UnAssigned Pins" />
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />

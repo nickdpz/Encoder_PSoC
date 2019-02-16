@@ -1,5 +1,5 @@
 -- Project:   Motor
--- Generated: 02/15/2019 18:56:30
+-- Generated: 02/15/2019 19:19:19
 -- PSoC Creator  4.2
 
 ENTITY Motor IS
@@ -99,7 +99,7 @@ ARCHITECTURE __DEFAULT__ OF Motor IS
     ATTRIBUTE lib_model OF SW(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF SW(0) : LABEL IS "P2[2]";
     ATTRIBUTE lib_model OF LED(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF LED(0) : LABEL IS "P2[1]";
+    ATTRIBUTE Location OF LED(0) : LABEL IS "P2[3]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell3";
     ATTRIBUTE Location OF \LCD:LCDPort(0)\ : LABEL IS "P12[0]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(1)\ : LABEL IS "iocell4";
@@ -114,6 +114,8 @@ ARCHITECTURE __DEFAULT__ OF Motor IS
     ATTRIBUTE Location OF \LCD:LCDPort(5)\ : LABEL IS "P12[5]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(6)\ : LABEL IS "iocell9";
     ATTRIBUTE Location OF \LCD:LCDPort(6)\ : LABEL IS "P12[6]";
+    ATTRIBUTE lib_model OF PIN_OUT(0) : LABEL IS "iocell10";
+    ATTRIBUTE Location OF PIN_OUT(0) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:status_2\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:genblk1:ctrlreg\ : LABEL IS "controlcell1";
