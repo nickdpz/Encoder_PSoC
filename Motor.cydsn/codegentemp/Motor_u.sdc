@@ -1,3 +1,3 @@
-# Component constraints for C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\Motor.cyprj
-# Date: Sat, 16 Feb 2019 00:58:28 GMT
+# Component constraints for C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\Motor.cyprj
+# Date: Wed, 15 May 2019 03:59:34 GMT

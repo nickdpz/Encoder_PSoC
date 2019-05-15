@@ -12,27 +12,58 @@
 #include "project.h"
 
 volatile int16 cuenta=0;
+volatile char cont=0;
 volatile int16 rpm=0;
-int16 rpmingresado=500;
+float d=0;
+float seleccion=0;
 
 
-
-
-CY_ISR(ISR_SW){
-    cuenta++;
-    SW_ClearInterrupt();
+void timer(){
+  if(cont==3){
+        cont=0;
+    }else{
+        cont=cont+1;
+    }
+    switch(cont){
+         case 0:
+            P0_Write(0b00001110);
+         break;
+         case 1:
+            P0_Write(0b00001101);
+         break;
+         case 2:
+            P0_Write(0b00001101);
+        break;
+        default:
+            P0_Write(0b00000111);
+        break;            
+    }   
 }
 
 CY_ISR(ISR_Timer){
-    rpm=cuenta*60;
-    cuenta=0;
-    LCD_ClearDisplay();
-    LCD_PrintNumber(rpm);
-
+    if(cont==3){
+        cont=0;
+    }else{
+        cont=cont+1;
+    }
+    switch(cont){
+         case 0:
+            P0_Write(0b00001110);
+         break;
+         case 1:
+            P0_Write(0b00001101);
+         break;
+         case 2:
+            P0_Write(0b00001101);
+        break;
+        default:
+            P0_Write(0b00000111);
+        break;            
+    }   
 }
 
 CY_ISR(ISR_KEY){
-    Control_Write(0);
+    Timer_Stop();//Detiene el timer para que no vuelva a entrar
 switch(Key_Read()) {
         case 0b00001110:
             switch(P0_Read()) {
@@ -111,8 +142,7 @@ switch(Key_Read()) {
                 default:
                 break;
     }
-    
-Control_Write(1);
+Timer_Start();
 Key_ClearInterrupt();
 }
 
@@ -121,32 +151,34 @@ Key_ClearInterrupt();
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
-    
-    ISR_M_StartEx(ISR_SW);
     ISR_T_StartEx(ISR_Timer);
     IRS_key_StartEx(ISR_KEY);
     LCD_Start();
     Timer_Start();
-    PWM_Start();
-    
-    
-
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
 
     for(;;)
     {
-     
-        if(rpmingresado<rpm){
-        //Volverse mas lento
-        PWM_WriteCompare(800);
-        
+     //Leer dato de sensor y compararlo con el nivel 
+        while(Pin_HC_Read()==0);//Espera hasta que llega 1
+        TimerSensor_Start();
+        //A andar el timer 
+        while(Pin_HC_Read()==1);
+        //Toma el valor del timer
+        d=5*TimerSensor_ReadCounter();
+        TimerSensor_Stop();
+        LCD_PrintNumber(d);
+        if(d>seleccion){
+        //Llena 
+            Llenar_Write(1);
+            
         }else{
-        
-        PWM_WriteCompare(80);  
-        //Volverse mas rapido
+         //Vacia
+            Vaciar_Write(1);
+            
         }
         
-        /* Place your application code here. */
+        //timer();
     }
 }
 

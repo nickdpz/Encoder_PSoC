@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: PIN_OUT.c  
+* File Name: Llenar.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "PIN_OUT.h"
+#include "Llenar.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 PIN_OUT__PORT == 15 && ((PIN_OUT__MASK & 0xC0) != 0))
+	 Llenar__PORT == 15 && ((Llenar__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: PIN_OUT_Write
+* Function Name: Llenar_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet PIN_OUT_SUT.c usage_PIN_OUT_Write
+*  \snippet Llenar_SUT.c usage_Llenar_Write
 *******************************************************************************/
-void PIN_OUT_Write(uint8 value)
+void Llenar_Write(uint8 value)
 {
-    uint8 staticBits = (PIN_OUT_DR & (uint8)(~PIN_OUT_MASK));
-    PIN_OUT_DR = staticBits | ((uint8)(value << PIN_OUT_SHIFT) & PIN_OUT_MASK);
+    uint8 staticBits = (Llenar_DR & (uint8)(~Llenar_MASK));
+    Llenar_DR = staticBits | ((uint8)(value << Llenar_SHIFT) & Llenar_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: PIN_OUT_SetDriveMode
+* Function Name: Llenar_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,16 +85,16 @@ void PIN_OUT_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet PIN_OUT_SUT.c usage_PIN_OUT_SetDriveMode
+*  \snippet Llenar_SUT.c usage_Llenar_SetDriveMode
 *******************************************************************************/
-void PIN_OUT_SetDriveMode(uint8 mode)
+void Llenar_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(PIN_OUT_0, mode);
+	CyPins_SetPinDriveMode(Llenar_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: PIN_OUT_Read
+* Function Name: Llenar_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -108,16 +108,16 @@ void PIN_OUT_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet PIN_OUT_SUT.c usage_PIN_OUT_Read  
+*  \snippet Llenar_SUT.c usage_Llenar_Read  
 *******************************************************************************/
-uint8 PIN_OUT_Read(void)
+uint8 Llenar_Read(void)
 {
-    return (PIN_OUT_PS & PIN_OUT_MASK) >> PIN_OUT_SHIFT;
+    return (Llenar_PS & Llenar_MASK) >> Llenar_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: PIN_OUT_ReadDataReg
+* Function Name: Llenar_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -126,8 +126,8 @@ uint8 PIN_OUT_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred PIN_OUT_Read() API because the 
-* PIN_OUT_ReadDataReg() reads the data register instead of the status 
+* preferred Llenar_Read() API because the 
+* Llenar_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -136,19 +136,19 @@ uint8 PIN_OUT_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet PIN_OUT_SUT.c usage_PIN_OUT_ReadDataReg 
+*  \snippet Llenar_SUT.c usage_Llenar_ReadDataReg 
 *******************************************************************************/
-uint8 PIN_OUT_ReadDataReg(void)
+uint8 Llenar_ReadDataReg(void)
 {
-    return (PIN_OUT_DR & PIN_OUT_MASK) >> PIN_OUT_SHIFT;
+    return (Llenar_DR & Llenar_MASK) >> Llenar_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(PIN_OUT_INTSTAT) 
+#if defined(Llenar_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: PIN_OUT_SetInterruptMode
+    * Function Name: Llenar_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -161,12 +161,12 @@ uint8 PIN_OUT_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use PIN_OUT_INTR_ALL to configure the
+    *  component. Or you may use Llenar_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - PIN_OUT_0_INTR       (First pin in the list)
-    *  - PIN_OUT_1_INTR       (Second pin in the list)
+    *  - Llenar_0_INTR       (First pin in the list)
+    *  - Llenar_1_INTR       (Second pin in the list)
     *  - ...
-    *  - PIN_OUT_INTR_ALL     (All pins in Pins component)
+    *  - Llenar_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -182,19 +182,19 @@ uint8 PIN_OUT_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet PIN_OUT_SUT.c usage_PIN_OUT_SetInterruptMode
+    *  \snippet Llenar_SUT.c usage_Llenar_SetInterruptMode
     *******************************************************************************/
-    void PIN_OUT_SetInterruptMode(uint16 position, uint16 mode)
+    void Llenar_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & PIN_OUT_0_INTR) != 0u) 
+		if((position & Llenar_0_INTR) != 0u) 
 		{ 
-			 PIN_OUT_0_INTTYPE_REG = (uint8)mode; 
+			 Llenar_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: PIN_OUT_ClearInterrupt
+    * Function Name: Llenar_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -211,11 +211,11 @@ uint8 PIN_OUT_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet PIN_OUT_SUT.c usage_PIN_OUT_ClearInterrupt
+    *  \snippet Llenar_SUT.c usage_Llenar_ClearInterrupt
     *******************************************************************************/
-    uint8 PIN_OUT_ClearInterrupt(void)
+    uint8 Llenar_ClearInterrupt(void)
     {
-        return (PIN_OUT_INTSTAT & PIN_OUT_MASK) >> PIN_OUT_SHIFT;
+        return (Llenar_INTSTAT & Llenar_MASK) >> Llenar_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

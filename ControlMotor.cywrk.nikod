@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ControlMotor\Motor\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ControlMotor\Motor\Source Files\main.c">
 <ExpandedNodeIds>
 <v>ControlMotor</v>
 <v>ControlMotor\Motor</v>
@@ -55,18 +55,18 @@
 <v>ControlMotor\Motor\Source Files\main.c</v>
 <v>ControlMotor\Motor\Generated_Source</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\Clock</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\Clock_1</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\Control</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\cy_boot</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\IRS_key</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\ISR_M</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\ISR_T</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\Key</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\LCD</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\LCD_LCDPort</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\LED</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\Llenar</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\P0</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\Pin_HC</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\Timer</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\timer_clock</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -91,11 +91,7 @@
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_PM.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
@@ -107,19 +103,13 @@
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\IRS_key.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_M.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Key.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\P0.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\PIN_OUT.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_PM.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\SW.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\timer_clock.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
@@ -133,35 +123,6 @@
 <VisibleNodeIds>
 <v>ControlMotor</v>
 <v>ControlMotor\Motor</v>
-<v>ControlMotor\Motor\CortexM3</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_PM.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\IRS_key.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_M.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Key.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\P0.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -177,34 +138,27 @@
 <v>ControlMotor\Motor\CY8C58LP Family Datasheet</v>
 <v>ControlMotor\Motor\System Reference Guides</v>
 <v>ControlMotor\Motor\System Reference Guides\cy_boot_v5_80</v>
-<v>ControlMotor\Motor\BasicCounter_v1_0.pdf</v>
 <v>ControlMotor\Motor\CharLCD_v2_20.pdf</v>
-<v>ControlMotor\Motor\cy_clock_v1_70.pdf</v>
 <v>ControlMotor\Motor\cy_clock_v2_20</v>
 <v>ControlMotor\Motor\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>ControlMotor\Motor\cy_constant_v1_0</v>
-<v>ControlMotor\Motor\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
 <v>ControlMotor\Motor\cy_isr_v1_70</v>
 <v>ControlMotor\Motor\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
 <v>ControlMotor\Motor\cy_pins_v2_20</v>
 <v>ControlMotor\Motor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>ControlMotor\Motor\CyControlReg_v1_80.pdf</v>
-<v>ControlMotor\Motor\demux_v1_10.pdf</v>
 <v>ControlMotor\Motor\Gnd_v1_0</v>
 <v>ControlMotor\Motor\Gnd_v1_0\Gnd_v1_0.pdf</v>
 <v>ControlMotor\Motor\LED_v1_0.pdf</v>
-<v>ControlMotor\Motor\not_v1_0</v>
-<v>ControlMotor\Motor\not_v1_0\not_v1_0.pdf</v>
 <v>ControlMotor\Motor\PhotoTrans_v1_0.pdf</v>
 <v>ControlMotor\Motor\Power_v1_0</v>
 <v>ControlMotor\Motor\Power_v1_0\Power_v1_0.pdf</v>
-<v>ControlMotor\Motor\PWM_v3_30.pdf</v>
 <v>ControlMotor\Motor\Resistor_v1_0</v>
 <v>ControlMotor\Motor\Resistor_v1_0\Resistor_v1_0.pdf</v>
 <v>ControlMotor\Motor\SwitchSPST_v1_0</v>
 <v>ControlMotor\Motor\SwitchSPST_v1_0\SwitchSPST_v1_0.pdf</v>
-<v>ControlMotor\Motor\Timer_v2_80.pdf</v>
-<v>ControlMotor\Motor\ZeroTerminal.pdf</v>
+<v>ControlMotor\Motor\Timer_v2_80</v>
+<v>ControlMotor\Motor\Timer_v2_80\Timer_v2_80.pdf</v>
+<v>ControlMotor\Motor\ZeroTerminal</v>
+<v>ControlMotor\Motor\ZeroTerminal\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>ControlMotor</v>
@@ -213,31 +167,27 @@
 <v>ControlMotor\Motor\CY8C58LP Family Datasheet</v>
 <v>ControlMotor\Motor\System Reference Guides</v>
 <v>ControlMotor\Motor\System Reference Guides\cy_boot_v5_80</v>
-<v>ControlMotor\Motor\BasicCounter_v1_0.pdf</v>
 <v>ControlMotor\Motor\CharLCD_v2_20.pdf</v>
-<v>ControlMotor\Motor\cy_clock_v1_70.pdf</v>
 <v>ControlMotor\Motor\cy_clock_v2_20</v>
 <v>ControlMotor\Motor\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>ControlMotor\Motor\cy_constant_v1_0</v>
-<v>ControlMotor\Motor\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
 <v>ControlMotor\Motor\cy_isr_v1_70</v>
 <v>ControlMotor\Motor\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
 <v>ControlMotor\Motor\cy_pins_v2_20</v>
 <v>ControlMotor\Motor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>ControlMotor\Motor\CyControlReg_v1_80.pdf</v>
-<v>ControlMotor\Motor\demux_v1_10.pdf</v>
 <v>ControlMotor\Motor\Gnd_v1_0</v>
 <v>ControlMotor\Motor\Gnd_v1_0\Gnd_v1_0.pdf</v>
 <v>ControlMotor\Motor\LED_v1_0.pdf</v>
-<v>ControlMotor\Motor\not_v1_0</v>
-<v>ControlMotor\Motor\not_v1_0\not_v1_0.pdf</v>
 <v>ControlMotor\Motor\PhotoTrans_v1_0.pdf</v>
 <v>ControlMotor\Motor\Power_v1_0</v>
 <v>ControlMotor\Motor\Power_v1_0\Power_v1_0.pdf</v>
-<v>ControlMotor\Motor\PWM_v3_30.pdf</v>
 <v>ControlMotor\Motor\Resistor_v1_0</v>
 <v>ControlMotor\Motor\Resistor_v1_0\Resistor_v1_0.pdf</v>
 <v>ControlMotor\Motor\SwitchSPST_v1_0</v>
+<v>ControlMotor\Motor\SwitchSPST_v1_0\SwitchSPST_v1_0.pdf</v>
+<v>ControlMotor\Motor\Timer_v2_80</v>
+<v>ControlMotor\Motor\Timer_v2_80\Timer_v2_80.pdf</v>
+<v>ControlMotor\Motor\ZeroTerminal</v>
+<v>ControlMotor\Motor\ZeroTerminal\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>

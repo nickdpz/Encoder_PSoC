@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: PIN_OUT.h  
+* File Name: Llenar.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_PIN_OUT_ALIASES_H) /* Pins PIN_OUT_ALIASES_H */
-#define CY_PINS_PIN_OUT_ALIASES_H
+#if !defined(CY_PINS_Llenar_ALIASES_H) /* Pins Llenar_ALIASES_H */
+#define CY_PINS_Llenar_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define PIN_OUT_0			(PIN_OUT__0__PC)
-#define PIN_OUT_0_INTR	((uint16)((uint16)0x0001u << PIN_OUT__0__SHIFT))
+#define Llenar_0			(Llenar__0__PC)
+#define Llenar_0_INTR	((uint16)((uint16)0x0001u << Llenar__0__SHIFT))
 
-#define PIN_OUT_INTR_ALL	 ((uint16)(PIN_OUT_0_INTR))
+#define Llenar_INTR_ALL	 ((uint16)(Llenar_0_INTR))
 
-#endif /* End Pins PIN_OUT_ALIASES_H */
+#endif /* End Pins Llenar_ALIASES_H */
 
 
 /* [] END OF FILE */

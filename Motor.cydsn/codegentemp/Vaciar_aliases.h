@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: SW.h  
+* File Name: Vaciar.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_SW_ALIASES_H) /* Pins SW_ALIASES_H */
-#define CY_PINS_SW_ALIASES_H
+#if !defined(CY_PINS_Vaciar_ALIASES_H) /* Pins Vaciar_ALIASES_H */
+#define CY_PINS_Vaciar_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define SW_0			(SW__0__PC)
-#define SW_0_INTR	((uint16)((uint16)0x0001u << SW__0__SHIFT))
+#define Vaciar_0			(Vaciar__0__PC)
+#define Vaciar_0_INTR	((uint16)((uint16)0x0001u << Vaciar__0__SHIFT))
 
-#define SW_INTR_ALL	 ((uint16)(SW_0_INTR))
+#define Vaciar_INTR_ALL	 ((uint16)(Vaciar_0_INTR))
 
-#endif /* End Pins SW_ALIASES_H */
+#endif /* End Pins Vaciar_ALIASES_H */
 
 
 /* [] END OF FILE */
