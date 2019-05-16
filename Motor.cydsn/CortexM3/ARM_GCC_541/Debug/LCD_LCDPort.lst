@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
   28:Generated_Source\PSoC5/LCD_LCDPort.c **** *
   29:Generated_Source\PSoC5/LCD_LCDPort.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/LCD_LCDPort.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 2
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 2
 
 
   31:Generated_Source\PSoC5/LCD_LCDPort.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
   52              		.section	.text.LCD_LCDPort_SetDriveMode,"ax",%progbits
   53              		.align	2
   54              		.global	LCD_LCDPort_SetDriveMode
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 3
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 3
 
 
   55              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
   76 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
   77 0014 03F0F103 		and	r3, r3, #241
   78 0018 0343     		orrs	r3, r3, r0
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 4
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 4
 
 
   79 001a 1370     		strb	r3, [r2]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  101:Generated_Source\PSoC5/LCD_LCDPort.c **** 
  102:Generated_Source\PSoC5/LCD_LCDPort.c **** /*******************************************************************************
  103:Generated_Source\PSoC5/LCD_LCDPort.c **** * Function Name: LCD_LCDPort_Read
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 5
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 5
 
 
  104:Generated_Source\PSoC5/LCD_LCDPort.c **** ****************************************************************************//**
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  132:Generated_Source\PSoC5/LCD_LCDPort.c **** *
  133:Generated_Source\PSoC5/LCD_LCDPort.c **** * The data output register controls the signal applied to the physical pin in 
  134:Generated_Source\PSoC5/LCD_LCDPort.c **** * conjunction with the drive mode parameter. This is not the same as the 
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 6
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 6
 
 
  135:Generated_Source\PSoC5/LCD_LCDPort.c **** * preferred LCD_LCDPort_Read() API because the 
@@ -347,8 +347,8 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  179 000b 01       		.uleb128 0x1
  180 000c 57000000 		.4byte	.LASF20
  181 0010 0C       		.byte	0xc
- 182 0011 3B010000 		.4byte	.LASF21
- 183 0015 E5000000 		.4byte	.LASF22
+ 182 0011 07010000 		.4byte	.LASF21
+ 183 0015 2C010000 		.4byte	.LASF22
  184 0019 00000000 		.4byte	.Ldebug_ranges0+0
  185 001d 00000000 		.4byte	0
  186 0021 00000000 		.4byte	.Ldebug_line0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  190 0028 F1010000 		.4byte	.LASF0
  191 002c 02       		.uleb128 0x2
  192 002d 01       		.byte	0x1
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 7
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 7
 
 
  193 002e 08       		.byte	0x8
@@ -378,7 +378,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  207 0048 02       		.uleb128 0x2
  208 0049 04       		.byte	0x4
  209 004a 07       		.byte	0x7
- 210 004b 29010000 		.4byte	.LASF5
+ 210 004b F5000000 		.4byte	.LASF5
  211 004f 02       		.uleb128 0x2
  212 0050 08       		.byte	0x8
  213 0051 05       		.byte	0x5
@@ -407,18 +407,18 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  236 007e 02       		.uleb128 0x2
  237 007f 08       		.byte	0x8
  238 0080 04       		.byte	0x4
- 239 0081 79010000 		.4byte	.LASF10
+ 239 0081 84010000 		.4byte	.LASF10
  240 0085 02       		.uleb128 0x2
  241 0086 01       		.byte	0x1
  242 0087 08       		.byte	0x8
  243 0088 C2010000 		.4byte	.LASF11
  244 008c 04       		.uleb128 0x4
- 245 008d 24010000 		.4byte	.LASF13
+ 245 008d F0000000 		.4byte	.LASF13
  246 0091 02       		.byte	0x2
  247 0092 8E02     		.2byte	0x28e
  248 0094 98000000 		.4byte	0x98
  249 0098 05       		.uleb128 0x5
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 8
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 8
 
 
  250 0099 6B000000 		.4byte	0x6b
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  264 00b9 6B000000 		.4byte	0x6b
  265 00bd 00000000 		.4byte	.LLST0
  266 00c1 08       		.uleb128 0x8
- 267 00c2 80010000 		.4byte	.LASF23
+ 267 00c2 E5000000 		.4byte	.LASF23
  268 00c6 01       		.byte	0x1
  269 00c7 3B       		.byte	0x3b
  270 00c8 6B000000 		.4byte	0x6b
@@ -446,7 +446,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  272 00cd 53       		.byte	0x53
  273 00ce 00       		.byte	0
  274 00cf 06       		.uleb128 0x6
- 275 00d0 60010000 		.4byte	.LASF15
+ 275 00d0 6B010000 		.4byte	.LASF15
  276 00d4 01       		.byte	0x1
  277 00d5 5A       		.byte	0x5a
  278 00d6 00000000 		.4byte	.LFB1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  304 0114 00000000 		.4byte	.LFB3
  305 0118 10000000 		.4byte	.LFE3-.LFB3
  306 011c 01       		.uleb128 0x1
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 9
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 9
 
 
  307 011d 9C       		.byte	0x9c
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  361 0032 49       		.uleb128 0x49
  362 0033 13       		.uleb128 0x13
  363 0034 00       		.byte	0
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 10
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 10
 
 
  364 0035 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  418 006c 0B       		.uleb128 0xb
  419 006d 3B       		.uleb128 0x3b
  420 006e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 11
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 11
 
 
  421 006f 49       		.uleb128 0x49
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  475 0030 60000000 		.4byte	.LFE1
  476 0034 0400     		.2byte	0x4
  477 0036 F3       		.byte	0xf3
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 12
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 12
 
 
  478 0037 01       		.uleb128 0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  521      7369676E 
  521      65642069 
  521      6E7400
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 13
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 13
 
 
  522              	.LASF19:
@@ -751,48 +751,48 @@ ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 1
  531      74696F6E 
  531      2D736563 
  531      74696F6E 
- 532              	.LASF22:
- 533 00e5 433A5C55 		.ascii	"C:\\Users\\nikod\\Documents\\PSoC Creator\\ControlM"
- 533      73657273 
- 533      5C6E696B 
- 533      6F645C44 
- 533      6F63756D 
- 534 0113 6F746F72 		.ascii	"otor\\Motor.cydsn\000"
- 534      5C4D6F74 
- 534      6F722E63 
- 534      7964736E 
- 534      00
- 535              	.LASF13:
- 536 0124 72656738 		.ascii	"reg8\000"
- 536      00
- 537              	.LASF5:
- 538 0129 6C6F6E67 		.ascii	"long unsigned int\000"
- 538      20756E73 
- 538      69676E65 
- 538      6420696E 
- 538      7400
- 539              	.LASF21:
- 540 013b 47656E65 		.ascii	"Generated_Source\\PSoC5\\LCD_LCDPort.c\000"
- 540      72617465 
- 540      645F536F 
- 540      75726365 
- 540      5C50536F 
- 541              	.LASF15:
-ARM GAS  C:\Users\nikod\AppData\Local\Temp\cc6Dsvio.s 			page 14
+ 532              	.LASF23:
+ 533 00e5 73746174 		.ascii	"staticBits\000"
+ 533      69634269 
+ 533      747300
+ 534              	.LASF13:
+ 535 00f0 72656738 		.ascii	"reg8\000"
+ 535      00
+ 536              	.LASF5:
+ 537 00f5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 537      20756E73 
+ 537      69676E65 
+ 537      6420696E 
+ 537      7400
+ 538              	.LASF21:
+ 539 0107 47656E65 		.ascii	"Generated_Source\\PSoC5\\LCD_LCDPort.c\000"
+ 539      72617465 
+ 539      645F536F 
+ 539      75726365 
+ 539      5C50536F 
+ 540              	.LASF22:
+ 541 012c 433A5C55 		.ascii	"C:\\Users\\nikod\\Documents\\PSoC Creator\\Encoder_"
+ 541      73657273 
+ 541      5C6E696B 
+ 541      6F645C44 
+ 541      6F63756D 
+ 542 015a 50536F43 		.ascii	"PSoC\\Motor.cydsn\000"
+ 542      5C4D6F74 
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccvdFegh.s 			page 14
 
 
- 542 0160 4C43445F 		.ascii	"LCD_LCDPort_SetDriveMode\000"
- 542      4C434450 
- 542      6F72745F 
- 542      53657444 
- 542      72697665 
- 543              	.LASF10:
- 544 0179 646F7562 		.ascii	"double\000"
- 544      6C6500
- 545              	.LASF23:
- 546 0180 73746174 		.ascii	"staticBits\000"
- 546      69634269 
- 546      747300
+ 542      6F722E63 
+ 542      7964736E 
+ 542      00
+ 543              	.LASF15:
+ 544 016b 4C43445F 		.ascii	"LCD_LCDPort_SetDriveMode\000"
+ 544      4C434450 
+ 544      6F72745F 
+ 544      53657444 
+ 544      72697665 
+ 545              	.LASF10:
+ 546 0184 646F7562 		.ascii	"double\000"
+ 546      6C6500
  547              	.LASF8:
  548 018b 756E7369 		.ascii	"unsigned int\000"
  548      676E6564 

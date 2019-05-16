@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Clock.h
+* File Name: clock.h
 * Version 2.20
 *
 *  Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_CLOCK_Clock_H)
-#define CY_CLOCK_Clock_H
+#if !defined(CY_CLOCK_clock_H)
+#define CY_CLOCK_clock_H
 
 #include <cytypes.h>
 #include <cyfitter.h>
@@ -36,37 +36,37 @@
 *        Function Prototypes
 ***************************************/
 
-void Clock_Start(void) ;
-void Clock_Stop(void) ;
+void clock_Start(void) ;
+void clock_Stop(void) ;
 
 #if(CY_PSOC3 || CY_PSOC5LP)
-void Clock_StopBlock(void) ;
+void clock_StopBlock(void) ;
 #endif /* (CY_PSOC3 || CY_PSOC5LP) */
 
-void Clock_StandbyPower(uint8 state) ;
-void Clock_SetDividerRegister(uint16 clkDivider, uint8 restart) 
+void clock_StandbyPower(uint8 state) ;
+void clock_SetDividerRegister(uint16 clkDivider, uint8 restart) 
                                 ;
-uint16 Clock_GetDividerRegister(void) ;
-void Clock_SetModeRegister(uint8 modeBitMask) ;
-void Clock_ClearModeRegister(uint8 modeBitMask) ;
-uint8 Clock_GetModeRegister(void) ;
-void Clock_SetSourceRegister(uint8 clkSource) ;
-uint8 Clock_GetSourceRegister(void) ;
-#if defined(Clock__CFG3)
-void Clock_SetPhaseRegister(uint8 clkPhase) ;
-uint8 Clock_GetPhaseRegister(void) ;
-#endif /* defined(Clock__CFG3) */
+uint16 clock_GetDividerRegister(void) ;
+void clock_SetModeRegister(uint8 modeBitMask) ;
+void clock_ClearModeRegister(uint8 modeBitMask) ;
+uint8 clock_GetModeRegister(void) ;
+void clock_SetSourceRegister(uint8 clkSource) ;
+uint8 clock_GetSourceRegister(void) ;
+#if defined(clock__CFG3)
+void clock_SetPhaseRegister(uint8 clkPhase) ;
+uint8 clock_GetPhaseRegister(void) ;
+#endif /* defined(clock__CFG3) */
 
-#define Clock_Enable()                       Clock_Start()
-#define Clock_Disable()                      Clock_Stop()
-#define Clock_SetDivider(clkDivider)         Clock_SetDividerRegister(clkDivider, 1u)
-#define Clock_SetDividerValue(clkDivider)    Clock_SetDividerRegister((clkDivider) - 1u, 1u)
-#define Clock_SetMode(clkMode)               Clock_SetModeRegister(clkMode)
-#define Clock_SetSource(clkSource)           Clock_SetSourceRegister(clkSource)
-#if defined(Clock__CFG3)
-#define Clock_SetPhase(clkPhase)             Clock_SetPhaseRegister(clkPhase)
-#define Clock_SetPhaseValue(clkPhase)        Clock_SetPhaseRegister((clkPhase) + 1u)
-#endif /* defined(Clock__CFG3) */
+#define clock_Enable()                       clock_Start()
+#define clock_Disable()                      clock_Stop()
+#define clock_SetDivider(clkDivider)         clock_SetDividerRegister(clkDivider, 1u)
+#define clock_SetDividerValue(clkDivider)    clock_SetDividerRegister((clkDivider) - 1u, 1u)
+#define clock_SetMode(clkMode)               clock_SetModeRegister(clkMode)
+#define clock_SetSource(clkSource)           clock_SetSourceRegister(clkSource)
+#if defined(clock__CFG3)
+#define clock_SetPhase(clkPhase)             clock_SetPhaseRegister(clkPhase)
+#define clock_SetPhaseValue(clkPhase)        clock_SetPhaseRegister((clkPhase) + 1u)
+#endif /* defined(clock__CFG3) */
 
 
 /***************************************
@@ -74,31 +74,31 @@ uint8 Clock_GetPhaseRegister(void) ;
 ***************************************/
 
 /* Register to enable or disable the clock */
-#define Clock_CLKEN              (* (reg8 *) Clock__PM_ACT_CFG)
-#define Clock_CLKEN_PTR          ((reg8 *) Clock__PM_ACT_CFG)
+#define clock_CLKEN              (* (reg8 *) clock__PM_ACT_CFG)
+#define clock_CLKEN_PTR          ((reg8 *) clock__PM_ACT_CFG)
 
 /* Register to enable or disable the clock */
-#define Clock_CLKSTBY            (* (reg8 *) Clock__PM_STBY_CFG)
-#define Clock_CLKSTBY_PTR        ((reg8 *) Clock__PM_STBY_CFG)
+#define clock_CLKSTBY            (* (reg8 *) clock__PM_STBY_CFG)
+#define clock_CLKSTBY_PTR        ((reg8 *) clock__PM_STBY_CFG)
 
 /* Clock LSB divider configuration register. */
-#define Clock_DIV_LSB            (* (reg8 *) Clock__CFG0)
-#define Clock_DIV_LSB_PTR        ((reg8 *) Clock__CFG0)
-#define Clock_DIV_PTR            ((reg16 *) Clock__CFG0)
+#define clock_DIV_LSB            (* (reg8 *) clock__CFG0)
+#define clock_DIV_LSB_PTR        ((reg8 *) clock__CFG0)
+#define clock_DIV_PTR            ((reg16 *) clock__CFG0)
 
 /* Clock MSB divider configuration register. */
-#define Clock_DIV_MSB            (* (reg8 *) Clock__CFG1)
-#define Clock_DIV_MSB_PTR        ((reg8 *) Clock__CFG1)
+#define clock_DIV_MSB            (* (reg8 *) clock__CFG1)
+#define clock_DIV_MSB_PTR        ((reg8 *) clock__CFG1)
 
 /* Mode and source configuration register */
-#define Clock_MOD_SRC            (* (reg8 *) Clock__CFG2)
-#define Clock_MOD_SRC_PTR        ((reg8 *) Clock__CFG2)
+#define clock_MOD_SRC            (* (reg8 *) clock__CFG2)
+#define clock_MOD_SRC_PTR        ((reg8 *) clock__CFG2)
 
-#if defined(Clock__CFG3)
+#if defined(clock__CFG3)
 /* Analog clock phase configuration register */
-#define Clock_PHASE              (* (reg8 *) Clock__CFG3)
-#define Clock_PHASE_PTR          ((reg8 *) Clock__CFG3)
-#endif /* defined(Clock__CFG3) */
+#define clock_PHASE              (* (reg8 *) clock__CFG3)
+#define clock_PHASE_PTR          ((reg8 *) clock__CFG3)
+#endif /* defined(clock__CFG3) */
 
 
 /**************************************
@@ -106,19 +106,19 @@ uint8 Clock_GetPhaseRegister(void) ;
 **************************************/
 
 /* Power manager register masks */
-#define Clock_CLKEN_MASK         Clock__PM_ACT_MSK
-#define Clock_CLKSTBY_MASK       Clock__PM_STBY_MSK
+#define clock_CLKEN_MASK         clock__PM_ACT_MSK
+#define clock_CLKSTBY_MASK       clock__PM_STBY_MSK
 
 /* CFG2 field masks */
-#define Clock_SRC_SEL_MSK        Clock__CFG2_SRC_SEL_MASK
-#define Clock_MODE_MASK          (~(Clock_SRC_SEL_MSK))
+#define clock_SRC_SEL_MSK        clock__CFG2_SRC_SEL_MASK
+#define clock_MODE_MASK          (~(clock_SRC_SEL_MSK))
 
-#if defined(Clock__CFG3)
+#if defined(clock__CFG3)
 /* CFG3 phase mask */
-#define Clock_PHASE_MASK         Clock__CFG3_PHASE_DLY_MASK
-#endif /* defined(Clock__CFG3) */
+#define clock_PHASE_MASK         clock__CFG3_PHASE_DLY_MASK
+#endif /* defined(clock__CFG3) */
 
-#endif /* CY_CLOCK_Clock_H */
+#endif /* CY_CLOCK_clock_H */
 
 
 /* [] END OF FILE */

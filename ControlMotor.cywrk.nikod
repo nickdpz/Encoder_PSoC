@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="ControlMotor\Motor\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>ControlMotor</v>
 <v>ControlMotor\Motor</v>
@@ -58,15 +58,15 @@
 <v>ControlMotor\Motor\Generated_Source\PSoC5\cy_boot</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\IRS_key</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\ISR_T</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\ISR_T_1</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\ISR_T_2</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\Key</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\LCD</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\LCD_LCDPort</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\Llenar</v>
 <v>ControlMotor\Motor\Generated_Source\PSoC5\P0</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\Pin_HC</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\Timer</v>
-<v>ControlMotor\Motor\Generated_Source\PSoC5\timer_clock</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\PINT</v>
+<v>ControlMotor\Motor\Generated_Source\PSoC5\POUT</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -103,16 +103,24 @@
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\IRS_key.lst</v>
-<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T_1.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T_2.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Key.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Llenar.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\P0.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\PINT.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\POUT.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\timer_clock.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer2.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer2_PM.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\timerclock2.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Vaciar.lst</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Motor.elf</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Motor.hex</v>
 <v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Motor.map</v>
@@ -123,6 +131,35 @@
 <VisibleNodeIds>
 <v>ControlMotor</v>
 <v>ControlMotor\Motor</v>
+<v>ControlMotor\Motor\CortexM3</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\IRS_key.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T_1.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\ISR_T_2.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Key.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Llenar.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\P0.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\PINT.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\POUT.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>ControlMotor\Motor\CortexM3\ARM_GCC_541\Debug\Listing Files\timer_clock.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -198,7 +235,6 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Motor.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Motor.cydsn\Motor.cydwr" />
 <name v=".\Motor.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
@@ -207,7 +243,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="783, 416" SelectedTabbedMdiWindow="7723c533-e5f6-4f58-b041-eb162567da77"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4135072b-1754-4e5d-9fa2-a5f92d2695ae" /><DocumentWindow Key="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\TopDesign\TopDesign.cysch" Guid="8581e632-e246-40e8-b467-86cdaf0fc443" /><DocumentWindow Key="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\Motor.cydwr" Guid="c28b508c-2053-4bff-bcdc-730ee9ae9306" /><DocumentWindow Key="C:\Users\nikod\Documents\PSoC Creator\ControlMotor\Motor.cydsn\main.c" Guid="7723c533-e5f6-4f58-b041-eb162567da77" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="960, 409" SelectedTabbedMdiWindow="cefa03b9-313a-4be7-8e30-9d4cedc43547"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4135072b-1754-4e5d-9fa2-a5f92d2695ae" /><DocumentWindow Key="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\TopDesign\TopDesign.cysch" Guid="af8e02e8-54f6-4d3d-81ec-f268153bfc48" /><DocumentWindow Key="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\main.c" Guid="cefa03b9-313a-4be7-8e30-9d4cedc43547" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

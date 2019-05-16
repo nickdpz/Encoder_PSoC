@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Pin_HC.c  
+* File Name: PINT.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "Pin_HC.h"
+#include "PINT.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 Pin_HC__PORT == 15 && ((Pin_HC__MASK & 0xC0) != 0))
+	 PINT__PORT == 15 && ((PINT__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: Pin_HC_Write
+* Function Name: PINT_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet Pin_HC_SUT.c usage_Pin_HC_Write
+*  \snippet PINT_SUT.c usage_PINT_Write
 *******************************************************************************/
-void Pin_HC_Write(uint8 value)
+void PINT_Write(uint8 value)
 {
-    uint8 staticBits = (Pin_HC_DR & (uint8)(~Pin_HC_MASK));
-    Pin_HC_DR = staticBits | ((uint8)(value << Pin_HC_SHIFT) & Pin_HC_MASK);
+    uint8 staticBits = (PINT_DR & (uint8)(~PINT_MASK));
+    PINT_DR = staticBits | ((uint8)(value << PINT_SHIFT) & PINT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_HC_SetDriveMode
+* Function Name: PINT_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,16 +85,16 @@ void Pin_HC_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet Pin_HC_SUT.c usage_Pin_HC_SetDriveMode
+*  \snippet PINT_SUT.c usage_PINT_SetDriveMode
 *******************************************************************************/
-void Pin_HC_SetDriveMode(uint8 mode)
+void PINT_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(Pin_HC_0, mode);
+	CyPins_SetPinDriveMode(PINT_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_HC_Read
+* Function Name: PINT_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -108,16 +108,16 @@ void Pin_HC_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet Pin_HC_SUT.c usage_Pin_HC_Read  
+*  \snippet PINT_SUT.c usage_PINT_Read  
 *******************************************************************************/
-uint8 Pin_HC_Read(void)
+uint8 PINT_Read(void)
 {
-    return (Pin_HC_PS & Pin_HC_MASK) >> Pin_HC_SHIFT;
+    return (PINT_PS & PINT_MASK) >> PINT_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_HC_ReadDataReg
+* Function Name: PINT_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -126,8 +126,8 @@ uint8 Pin_HC_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred Pin_HC_Read() API because the 
-* Pin_HC_ReadDataReg() reads the data register instead of the status 
+* preferred PINT_Read() API because the 
+* PINT_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -136,19 +136,19 @@ uint8 Pin_HC_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet Pin_HC_SUT.c usage_Pin_HC_ReadDataReg 
+*  \snippet PINT_SUT.c usage_PINT_ReadDataReg 
 *******************************************************************************/
-uint8 Pin_HC_ReadDataReg(void)
+uint8 PINT_ReadDataReg(void)
 {
-    return (Pin_HC_DR & Pin_HC_MASK) >> Pin_HC_SHIFT;
+    return (PINT_DR & PINT_MASK) >> PINT_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(Pin_HC_INTSTAT) 
+#if defined(PINT_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: Pin_HC_SetInterruptMode
+    * Function Name: PINT_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -161,12 +161,12 @@ uint8 Pin_HC_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use Pin_HC_INTR_ALL to configure the
+    *  component. Or you may use PINT_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - Pin_HC_0_INTR       (First pin in the list)
-    *  - Pin_HC_1_INTR       (Second pin in the list)
+    *  - PINT_0_INTR       (First pin in the list)
+    *  - PINT_1_INTR       (Second pin in the list)
     *  - ...
-    *  - Pin_HC_INTR_ALL     (All pins in Pins component)
+    *  - PINT_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -182,19 +182,19 @@ uint8 Pin_HC_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet Pin_HC_SUT.c usage_Pin_HC_SetInterruptMode
+    *  \snippet PINT_SUT.c usage_PINT_SetInterruptMode
     *******************************************************************************/
-    void Pin_HC_SetInterruptMode(uint16 position, uint16 mode)
+    void PINT_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & Pin_HC_0_INTR) != 0u) 
+		if((position & PINT_0_INTR) != 0u) 
 		{ 
-			 Pin_HC_0_INTTYPE_REG = (uint8)mode; 
+			 PINT_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: Pin_HC_ClearInterrupt
+    * Function Name: PINT_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -211,11 +211,11 @@ uint8 Pin_HC_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet Pin_HC_SUT.c usage_Pin_HC_ClearInterrupt
+    *  \snippet PINT_SUT.c usage_PINT_ClearInterrupt
     *******************************************************************************/
-    uint8 Pin_HC_ClearInterrupt(void)
+    uint8 PINT_ClearInterrupt(void)
     {
-        return (Pin_HC_INTSTAT & Pin_HC_MASK) >> Pin_HC_SHIFT;
+        return (PINT_INTSTAT & PINT_MASK) >> PINT_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

@@ -1,10 +1,10 @@
 -- Project:   C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\Motor.cyprj
--- Generated: 05/14/2019 22:59:48
+-- Generated: 05/16/2019 12:37:14
 -- PSoC Creator  4.2
 
 ENTITY Motor IS
     PORT(
-        Pin_HC(0)_PAD : IN std_ulogic;
+        PINT(0)_PAD : IN std_ulogic;
         \LCD:LCDPort(0)_PAD\ : OUT std_ulogic;
         \LCD:LCDPort(1)_PAD\ : OUT std_ulogic;
         \LCD:LCDPort(2)_PAD\ : OUT std_ulogic;
@@ -21,7 +21,8 @@ ENTITY Motor IS
         P0(0)_PAD : OUT std_ulogic;
         P0(1)_PAD : OUT std_ulogic;
         P0(2)_PAD : OUT std_ulogic;
-        P0(3)_PAD : OUT std_ulogic);
+        P0(3)_PAD : OUT std_ulogic;
+        POUT(0)_PAD : IN std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VUSB OF __DEFAULT__ : ENTITY IS 5e0;
@@ -57,12 +58,14 @@ ARCHITECTURE __DEFAULT__ OF Motor IS
     SIGNAL Net_202 : bit;
     ATTRIBUTE global_signal OF Net_202 : SIGNAL IS true;
     SIGNAL Net_202_local : bit;
+    SIGNAL Net_210 : bit;
     SIGNAL Net_57 : bit;
     SIGNAL P0(0)__PA : bit;
     SIGNAL P0(1)__PA : bit;
     SIGNAL P0(2)__PA : bit;
     SIGNAL P0(3)__PA : bit;
-    SIGNAL Pin_HC(0)__PA : bit;
+    SIGNAL PINT(0)__PA : bit;
+    SIGNAL POUT(0)__PA : bit;
     SIGNAL Vaciar(0)__PA : bit;
     SIGNAL \\\LCD:LCDPort(0)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(1)\\__PA\ : bit;
@@ -71,25 +74,24 @@ ARCHITECTURE __DEFAULT__ OF Motor IS
     SIGNAL \\\LCD:LCDPort(4)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(5)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
+    SIGNAL \Timer2:Net_261\ : bit;
+    SIGNAL \Timer2:Net_57\ : bit;
     SIGNAL \Timer:Net_261\ : bit;
     SIGNAL \Timer:Net_57\ : bit;
-    SIGNAL \TimerSensor:Net_261\ : bit;
-    SIGNAL \TimerSensor:Net_51\ : bit;
-    SIGNAL \TimerSensor:Net_57\ : bit;
     SIGNAL __ONE__ : bit;
-    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(3,0,A)0";
+    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(1,3,A)0";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
-    SIGNAL tmpOE__Pin_HC_net_0 : bit;
-    ATTRIBUTE POWER OF tmpOE__Pin_HC_net_0 : SIGNAL IS true;
+    SIGNAL tmpOE__PINT_net_0 : bit;
+    ATTRIBUTE POWER OF tmpOE__PINT_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \ClockBlock.dclk_glb_ff_0__sig\ : bit;
     SIGNAL \ClockBlock.dclk_glb_ff_1__sig\ : bit;
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
-    ATTRIBUTE lib_model OF Pin_HC(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF Pin_HC(0) : LABEL IS "P2[2]";
+    ATTRIBUTE lib_model OF PINT(0) : LABEL IS "iocell1";
+    ATTRIBUTE Location OF PINT(0) : LABEL IS "P3[4]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell2";
     ATTRIBUTE Location OF \LCD:LCDPort(0)\ : LABEL IS "P12[0]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(1)\ : LABEL IS "iocell3";
@@ -105,9 +107,9 @@ ARCHITECTURE __DEFAULT__ OF Motor IS
     ATTRIBUTE lib_model OF \LCD:LCDPort(6)\ : LABEL IS "iocell8";
     ATTRIBUTE Location OF \LCD:LCDPort(6)\ : LABEL IS "P12[6]";
     ATTRIBUTE lib_model OF Llenar(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF Llenar(0) : LABEL IS "P1[2]";
+    ATTRIBUTE Location OF Llenar(0) : LABEL IS "P2[4]";
     ATTRIBUTE lib_model OF Vaciar(0) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF Vaciar(0) : LABEL IS "P2[3]";
+    ATTRIBUTE Location OF Vaciar(0) : LABEL IS "P3[0]";
     ATTRIBUTE Location OF Key : LABEL IS "F(PICU,0)";
     ATTRIBUTE lib_model OF Key(0) : LABEL IS "iocell11";
     ATTRIBUTE Location OF Key(0) : LABEL IS "P0[0]";
@@ -118,19 +120,22 @@ ARCHITECTURE __DEFAULT__ OF Motor IS
     ATTRIBUTE lib_model OF Key(3) : LABEL IS "iocell14";
     ATTRIBUTE Location OF Key(3) : LABEL IS "P0[3]";
     ATTRIBUTE lib_model OF P0(0) : LABEL IS "iocell15";
-    ATTRIBUTE Location OF P0(0) : LABEL IS "P0[4]";
+    ATTRIBUTE Location OF P0(0) : LABEL IS "P2[0]";
     ATTRIBUTE lib_model OF P0(1) : LABEL IS "iocell16";
-    ATTRIBUTE Location OF P0(1) : LABEL IS "P0[5]";
+    ATTRIBUTE Location OF P0(1) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF P0(2) : LABEL IS "iocell17";
-    ATTRIBUTE Location OF P0(2) : LABEL IS "P0[6]";
+    ATTRIBUTE Location OF P0(2) : LABEL IS "P2[2]";
     ATTRIBUTE lib_model OF P0(3) : LABEL IS "iocell18";
-    ATTRIBUTE Location OF P0(3) : LABEL IS "P0[7]";
-    ATTRIBUTE Location OF \Timer:TimerHW\ : LABEL IS "F(Timer,0)";
+    ATTRIBUTE Location OF P0(3) : LABEL IS "P2[3]";
+    ATTRIBUTE lib_model OF POUT(0) : LABEL IS "iocell19";
+    ATTRIBUTE Location OF POUT(0) : LABEL IS "P3[3]";
+    ATTRIBUTE Location OF \Timer:TimerHW\ : LABEL IS "F(Timer,1)";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(3,0)";
-    ATTRIBUTE Location OF ISR_T : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
-    ATTRIBUTE Location OF \TimerSensor:TimerHW\ : LABEL IS "F(Timer,1)";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF ISR_T_1 : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
+    ATTRIBUTE Location OF \Timer2:TimerHW\ : LABEL IS "F(Timer,0)";
     ATTRIBUTE Location OF IRS_key : LABEL IS "[IntrContainer=(0)][IntrId=(4)]";
+    ATTRIBUTE Location OF ISR_T_2 : LABEL IS "[IntrContainer=(0)][IntrId=(1)]";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -326,7 +331,7 @@ BEGIN
             dclk_glb_ff_0 => \ClockBlock.dclk_glb_ff_0__sig\,
             dclk_glb_ff_1 => \ClockBlock.dclk_glb_ff_1__sig\);
 
-    Pin_HC:logicalport
+    PINT:logicalport
         GENERIC MAP(
             drive_mode => "001",
             ibuf_enabled => "1",
@@ -397,18 +402,18 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    Pin_HC(0):iocell
+    PINT(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "Pin_HC",
+            logicalport => "PINT",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
         PORT MAP(
-            pa_out => Pin_HC(0)__PA,
+            pa_out => PINT(0)__PA,
             oe => open,
-            pad_in => Pin_HC(0)_PAD,
+            pad_in => PINT(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -1095,6 +1100,96 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
+    POUT:logicalport
+        GENERIC MAP(
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "d6178618-3fd5-482e-bd0b-3f9ae46f57ca",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    POUT(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "POUT",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => POUT(0)__PA,
+            oe => open,
+            pad_in => POUT(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
     \Timer:TimerHW\:timercell
         GENERIC MAP(
             cy_registers => "")
@@ -1116,15 +1211,15 @@ BEGIN
         PORT MAP(
             q => __ONE__);
 
-    ISR_T:interrupt
+    ISR_T_1:interrupt
         GENERIC MAP(
-            int_type => "00",
+            int_type => "10",
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_18,
             clock => ClockBlock_BUS_CLK);
 
-    \TimerSensor:TimerHW\:timercell
+    \Timer2:TimerHW\:timercell
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
@@ -1133,9 +1228,9 @@ BEGIN
             enable => __ONE__,
             capture => open,
             timer_reset => open,
-            tc => \TimerSensor:Net_51\,
-            cmp => \TimerSensor:Net_261\,
-            irq => \TimerSensor:Net_57\);
+            tc => Net_210,
+            cmp => \Timer2:Net_261\,
+            irq => \Timer2:Net_57\);
 
     IRS_key:interrupt
         GENERIC MAP(
@@ -1143,6 +1238,14 @@ BEGIN
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_57,
+            clock => ClockBlock_BUS_CLK);
+
+    ISR_T_2:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_210,
             clock => ClockBlock_BUS_CLK);
 
 END __DEFAULT__;

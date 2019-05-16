@@ -102,8 +102,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareexport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.scat</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_T.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_T.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Key_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Key.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Key.h</File>
@@ -112,20 +110,27 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P0_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P0.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P0.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_HC_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_HC.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_HC.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\TimerSensor.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\TimerSensor.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\TimerSensor_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Llenar_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Llenar.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Llenar.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Vaciar_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Vaciar.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Vaciar.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Timer2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Timer2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Timer2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_T_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_T_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_T_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_T_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PINT_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PINT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PINT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\POUT_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\POUT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\POUT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timerclock2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timerclock2.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\Export\ARM_GCC_Generic">
