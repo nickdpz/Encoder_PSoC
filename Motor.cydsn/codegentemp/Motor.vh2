@@ -2,7 +2,7 @@
 --	Conversion of Motor.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu May 16 12:37:06 2019
+--	Mon May 20 11:12:45 2019
 --
 
 USE cypress.cypress.all;
@@ -23,7 +23,7 @@ TERMINAL Net_199 : bit;
 TERMINAL Net_5 : bit;
 TERMINAL Net_6 : bit;
 TERMINAL Net_7 : bit;
-SIGNAL Net_10 : bit;
+SIGNAL Net_230 : bit;
 SIGNAL Net_12 : bit;
 SIGNAL \Timer:Net_260\ : bit;
 SIGNAL \Timer:Net_266\ : bit;
@@ -66,7 +66,7 @@ SIGNAL tmpFB_0__Vaciar_net_0 : bit;
 SIGNAL tmpIO_0__Vaciar_net_0 : bit;
 TERMINAL tmpSIOVREF__Vaciar_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Vaciar_net_0 : bit;
-SIGNAL Net_202 : bit;
+SIGNAL Net_229 : bit;
 SIGNAL \Timer2:Net_260\ : bit;
 SIGNAL \Timer2:Net_266\ : bit;
 SIGNAL Net_204 : bit;
@@ -234,14 +234,14 @@ timer_clock:cy_clock_v1_0
 		id=>"c0fb34bd-1044-4931-9788-16b01ce89812",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"10000000000000",
+		period=>"1000000000000",
 		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_10,
+	PORT MAP(clock_out=>Net_230,
 		dig_domain_out=>open);
 \Timer:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_10,
+	PORT MAP(clock=>Net_230,
 		kill=>zero,
 		enable=>tmpOE__PINT_net_0,
 		capture=>zero,
@@ -471,7 +471,7 @@ Vaciar:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__Vaciar_net_0);
 \Timer2:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_202,
+	PORT MAP(clock=>Net_229,
 		kill=>zero,
 		enable=>tmpOE__PINT_net_0,
 		capture=>zero,
@@ -697,22 +697,22 @@ ISR_T_2:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
 	PORT MAP(int_signal=>Net_210);
-timerclock2:cy_clock_v1_0
+timerclock:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"611fee2e-39b4-40ea-844b-a202d03101d5",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"3906250000000",
+		period=>"50000000000",
 		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_202,
+	PORT MAP(clock_out=>Net_229,
 		dig_domain_out=>open);
 POUT:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"d6178618-3fd5-482e-bd0b-3f9ae46f57ca",
-		drive_mode=>"001",
+		drive_mode=>"110",
 		ibuf_enabled=>"1",
 		init_dr_st=>"0",
-		input_sync=>"0",
+		input_sync=>"1",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
 		intr_mode=>"00",
@@ -734,7 +734,7 @@ POUT:cy_psoc3_pins_v1_10
 		oe_conn=>"0",
 		oe_reset=>'0',
 		pin_aliases=>"",
-		pin_mode=>"I",
+		pin_mode=>"O",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"00000000",
@@ -748,7 +748,7 @@ POUT:cy_psoc3_pins_v1_10
 		slew_rate=>"0",
 		spanning=>'0',
 		sw_only=>'0',
-		vtrip=>"00",
+		vtrip=>"10",
 		width=>1,
 		port_alias_required=>'0',
 		port_alias_group=>"",

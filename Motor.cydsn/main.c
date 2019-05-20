@@ -13,39 +13,43 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-volatile int16 contd=0;
+volatile uint16 contd=0;
 volatile char cont=0;
-volatile int16 rpm=0;
-float d=0;
+uint16 d=0;
 float seleccion=5.5;//medida en cm
 volatile bool dec=1;
+volatile float dising=100;//Distancia Ingresada
+volatile uint16 disingaux=0;//distancia tempotal
+volatile uint8 de=0;
 
 
-
-
-void timer(){
-if(dec){
-        if(cont==3){
-            cont=0;
-        }else{
-            cont=cont+1;
+void visual(uint8 numero){
+    if(numero==10){  
+        //Enter
+    if(de==0){
+        dising=disingaux;
+        disingaux=0;
+        de=1;
+        LCD_Position(1,10);
+        LCD_PrintString("    ");
+        LCD_Position(1,10);
+        LCD_PrintNumber((int)dising);
         }
-        switch(cont){
-             case 0:
-                P0_Write(0b00001110);
-             break;
-             case 1:
-                P0_Write(0b00001101);
-             break;
-             case 2:
-                P0_Write(0b00001101);
-            break;
-            default:
-                P0_Write(0b00000111);
-            break;            
-        }   
-    }
+    }else{
+        de=0;
+            if(disingaux==0){
+                disingaux=numero;
+            }else{
+                disingaux=disingaux*10+numero;
+                    if((disingaux>100)&(disingaux>1000)){
+                        dising=1000;
+                        disingaux=0;
+                        de=1;
+                    }
+                }
+        }
 }
+
 
 CY_ISR(ISR_Timer){
     if(cont==3){
@@ -70,10 +74,6 @@ CY_ISR(ISR_Timer){
 }
 CY_ISR(ISR_Timer2){
     contd++;//cuenta cada 100us -- la señal va de 100us a 25 ms es decir que el contador debe estar de 0 a 250 pero se pone la condicion en 500 por silas moscas
-    if(contd>=500){
-    LCD_Position(0,0);
-    LCD_PrintString("Desconectado");
-    }
 }
 
 
@@ -84,6 +84,7 @@ switch(Key_Read()) {
         case 0b00001110:
             switch(P0_Read()) {
                     case 0xE:
+                    visual(4);
                     break;
                     case 0xD:
 
@@ -171,8 +172,6 @@ int main(void)
     ISR_T_2_StartEx(ISR_Timer2);
     IRS_key_StartEx(ISR_KEY);
     LCD_Start();
-    LCD_Position(0,0);
-    LCD_PrintString("Hola iniciando");
     Timer_Start();
     Timer2_Start();
     P0_Write(0b00001111);
@@ -184,13 +183,20 @@ int main(void)
         POUT_Write(0); //para generar un pulso limpio ponemos a LOW 4us
         CyDelayUs(4);
         POUT_Write(1);  //generamos Trigger (disparo) de 10us
-        CyDelayUs(10);  
-        while(PINT_Read()==0);//Espera hasta que llega 1
+        CyDelayUs(10);
+        POUT_Write(0);
+        while(PINT_Read()==0x0);//Espera hasta que llega 1
         contd=0;
-        while(PINT_Read()==1);
+        while(PINT_Read()==0x1);
+        LCD_Position(1,6);
+        LCD_PrintString("S");
         //Toma el valor del timer
-        d=(423*contd)/250;//25 ms son 423cm --> cuantas veces 100 us son 25ms, serian 250: entonces 250 equivale a 423 cm --> distancia(cm)=423*cont(cuenta)/250
+        d=contd;//25 ms son 423cm --> cuantas veces 100 us son 25ms, serian 250: entonces 250 equivale a 423 cm --> distancia(cm)=423*cont(cuenta)/250
+        LCD_Position(0,0);
         LCD_PrintNumber(d);
+        LCD_Position(1,0);
+        CyDelay(500);
+                /*
         if(d>seleccion){
         //Llena 
             Llenar_Write(1);
@@ -199,8 +205,7 @@ int main(void)
          //Vacia
             Vaciar_Write(1);
             
-        }
-        
+        }*/
         //timer();
     }
 }

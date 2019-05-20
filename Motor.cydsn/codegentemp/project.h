@@ -36,7 +36,7 @@
 #include "P0_aliases.h"
 #include "P0.h"
 #include "ISR_T_2.h"
-#include "timerclock2.h"
+#include "timerclock.h"
 #include "POUT_aliases.h"
 #include "POUT.h"
 #include "LCD_LCDPort_aliases.h"

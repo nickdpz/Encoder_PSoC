@@ -11,7 +11,7 @@
   <block name="GND_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="SW_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="POUT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="timerclock2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="timerclock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="ISR_T_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />

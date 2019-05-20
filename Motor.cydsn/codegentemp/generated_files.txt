@@ -50,8 +50,8 @@
   <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\P0.h" value="HEADER;;;;;P0" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\ISR_T_2.c" value="SOURCE_C;CortexM3;;;;ISR_T_2" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\ISR_T_2.h" value="HEADER;;;;;ISR_T_2" />
-  <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\timerclock2.c" value="SOURCE_C;CortexM3;;;;timerclock2" />
-  <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\timerclock2.h" value="HEADER;;;;;timerclock2" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\timerclock.c" value="SOURCE_C;CortexM3;;;;timerclock" />
+  <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\timerclock.h" value="HEADER;;;;;timerclock" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\POUT_aliases.h" value="HEADER;;;;;POUT" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\POUT.c" value="SOURCE_C;CortexM3;;;;POUT" />
   <file name="C:\Users\nikod\Documents\PSoC Creator\Encoder_PSoC\Motor.cydsn\codegentemp\POUT.h" value="HEADER;;;;;POUT" />
